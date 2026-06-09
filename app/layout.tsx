@@ -19,8 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geist.className} bg-white text-slate-900`}>
-        <header className="border-b">
+      <body className={`${geist.className} bg-[#F8F5F0] text-[#2F332F]`}>
+        <header className="border-b border-[#E8E1D8] bg-[#FFFDF8]/90">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
             <a href="/" className="text-lg font-medium">
               Justine Roth Nutrition
