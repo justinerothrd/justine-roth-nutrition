@@ -33,11 +33,6 @@ export default function ServicesPage() {
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-[#536857]">
             Services
           </p>
-
-          <h1 className="max-w-4xl text-5xl font-light leading-tight md:text-6xl">
-            Nutrition counseling rooted in compassion, evidence, and recovery.
-          </h1>
-
           <p className="mt-6 max-w-2xl text-xl leading-8 text-[#5F665F]">
             Services are individualized for each client and may include nutrition
             assessment, meal support, family guidance, treatment team
