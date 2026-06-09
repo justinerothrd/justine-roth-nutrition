@@ -1,0 +1,15 @@
+export default function AboutPage() {
+  return (
+    <main className="mx-auto max-w-4xl px-6 py-20">
+      <h1 className="text-5xl font-light">
+        About Justine Roth
+      </h1>
+
+      <p className="mt-8 text-lg leading-8 text-slate-600">
+        Justine Roth, MS, RD, CEDS-S is a Registered Dietitian
+        specializing in eating disorders, nutrition counseling,
+        and recovery-focused care for adolescents and adults.
+      </p>
+    </main>
+  );
+}
