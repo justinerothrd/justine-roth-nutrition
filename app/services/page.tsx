@@ -1,10 +1,9 @@
 export default function ServicesPage() {
   const services = [
-    ["Individual Nutrition Counseling", "Personalized support for recovery, nourishment, and a more flexible relationship with food."],
     ["Eating Disorder Nutrition Therapy", "Specialized nutrition care for Anorexia Nervosa, Bulimia Nervosa, Binge Eating Disorder, ARFID, and disordered eating."],
-    ["Family & Parent Support", "Guidance for families navigating meals, recovery expectations, school concerns, and treatment support."],
-    ["ARFID Support", "Practical support for selective eating, limited variety, sensory sensitivity, fear of adverse consequences, and low appetite."],
-    ["Medical Nutrition Therapy", "Individualized nutrition care for health concerns requiring realistic, coordinated support."],
+    ["Individual Nutrition Counseling", "Personalized nutrition guidance for various health concerns including: pediatric nutrition, diabetes, hypertension, sports nutrition, and mindful eating."],
+    ["Family & Parent Support", "Guidance for families who need help navigating meals, recovery expectations, school concerns, and treatment support."],
+    ["ARFID Support", "Practical interventions and strategies for selective eating, limited variety, sensory sensitivity, fear of adverse consequences, and low appetite."],
     ["Professional Consultation", "Consultation for clinicians, programs, schools, and teams seeking eating disorder nutrition expertise."],
   ];
 
