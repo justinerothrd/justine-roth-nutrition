@@ -35,11 +35,11 @@ export default function GroupsPage() {
           </p>
 
           <h1 className="max-w-4xl text-4xl font-light leading-tight sm:text-5xl md:text-6xl">
-            Yoga & Supportive Group Programs
+            Yoga & Meal Support 
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5F665F]">
-            Explore current nutrition, meal support, mindfulness, and yoga
+            Explore current meal support, mindfulness, and yoga
             groups designed to support recovery and overall well-being.
           </p>
         </div>
