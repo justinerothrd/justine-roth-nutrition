@@ -1,117 +1,210 @@
 import Link from "next/link";
 
+const services = [
+  {
+    number: "01",
+    title: "Individual Counseling",
+    description:
+      "Personalized nutrition care for adolescents and adults navigating eating disorders, ARFID, disordered eating, and recovery.",
+  },
+  {
+    number: "02",
+    title: "Family Support",
+    description:
+      "Practical guidance for parents and caregivers supporting a loved one through meals, treatment, and recovery.",
+  },
+  {
+    number: "03",
+    title: "Group Programs",
+    description:
+      "Current offerings include meal support, mindfulness, movement, and nutrition-focused groups.",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#2F332F]">
       {/* Hero */}
-      <section className="px-6 pt-16 pb-20 md:pt-20 md:pb-24">
-        <div className="mx-auto max-w-5xl text-center">
-          <p className="mb-5 text-sm font-medium uppercase tracking-[0.25em] text-[#536857]">
-            Eating Disorder Nutrition Counseling
-          </p>
+      <section className="overflow-hidden px-6 pb-20 pt-16 md:pb-28 md:pt-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-12 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
+            <div>
+              <p className="mb-7 text-xs font-medium uppercase tracking-[0.3em] text-[#536857]">
+                Eating Disorder Nutrition Counseling
+              </p>
 
-          <h1 className="mx-auto max-w-4xl text-5xl font-light leading-tight md:text-7xl">
-            Helping individuals and families build a healthier relationship with
-            food.
-          </h1>
+              <h1 className="font-display max-w-4xl text-[3.5rem] font-normal leading-[0.95] tracking-[-0.035em] sm:text-7xl md:text-[5.5rem] lg:text-[6.25rem]">
+                A more peaceful relationship with food is possible.
+              </h1>
+            </div>
 
-          <p className="mx-auto mt-8 max-w-3xl text-xl leading-8 text-[#5F665F]">
-            Compassionate, evidence-based nutrition counseling for adolescents,
-            adults, and families navigating eating disorders, recovery, ARFID,
-            and nutrition-related concerns.
-          </p>
+            <div className="border-l border-[#CFC7BC] pl-6 lg:mb-3 lg:pl-8">
+              <p className="text-lg leading-8 text-[#5F665F]">
+                Compassionate, evidence-based nutrition counseling for
+                adolescents, adults, and families navigating eating disorders,
+                ARFID, recovery, and nutrition-related concerns.
+              </p>
 
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="rounded-full bg-[#536857] px-8 py-4 text-white transition hover:bg-[#435646]"
-            >
-              Schedule a Consultation
-            </Link>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#536857] px-7 py-3.5 text-sm text-white transition hover:bg-[#435646]"
+                >
+                  Schedule a Consultation
+                </Link>
 
-            <Link
-              href="/about"
-              className="rounded-full border border-[#536857] px-8 py-4 text-[#536857] transition hover:bg-white"
-            >
-              Learn More
-            </Link>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center justify-center rounded-full border border-[#AEB5AA] px-7 py-3.5 text-sm text-[#536857] transition hover:bg-[#FFFDF8]"
+                >
+                  Learn About Justine
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 h-px bg-[#DCD5CB]" />
+
+          <div className="mt-6 flex flex-col gap-2 text-sm text-[#727870] sm:flex-row sm:items-center sm:justify-between">
+            <p>Justine Roth, MS, RD, CEDS-S</p>
+            <p>Over 20 years of specialized experience</p>
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="bg-[#FFFDF8] px-6 py-20">
+      <section className="bg-[#FFFDF8] px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center text-4xl font-light">
-            How I Can Help
-          </h2>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="rounded-3xl border border-[#E8E1D8] bg-[#F8F5F0] p-8">
-              <h3 className="text-2xl font-medium">Individual Counseling</h3>
-              <p className="mt-4 leading-7 text-[#5F665F]">
-                Personalized nutrition counseling for adolescents and adults
-                struggling with eating disorders and disordered eating.
+          <div className="grid gap-10 md:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#536857]">
+                Services
               </p>
+
+              <h2 className="font-display mt-5 text-5xl font-normal leading-none tracking-[-0.025em] sm:text-6xl">
+                Care that meets you where you are.
+              </h2>
             </div>
 
-            <div className="rounded-3xl border border-[#E8E1D8] bg-[#F8F5F0] p-8">
-              <h3 className="text-2xl font-medium">Family Support</h3>
-              <p className="mt-4 leading-7 text-[#5F665F]">
-                Guidance for parents and caregivers navigating meals, recovery,
-                and supporting a loved one.
-              </p>
-            </div>
+            <div className="border-t border-[#DCD5CB]">
+              {services.map((service) => (
+                <article
+                  key={service.title}
+                  className="grid gap-4 border-b border-[#DCD5CB] py-8 sm:grid-cols-[55px_1fr] sm:gap-8"
+                >
+                  <p className="text-sm text-[#8B928A]">{service.number}</p>
 
-            <div className="rounded-3xl border border-[#E8E1D8] bg-[#F8F5F0] p-8">
-              <h3 className="text-2xl font-medium">Groups</h3>
-              <p className="mt-4 leading-7 text-[#5F665F]">
-                Yoga, meal support, mindfulness, and nutrition education groups
-                offered throughout the year.
-              </p>
+                  <div className="grid gap-4 md:grid-cols-[0.8fr_1.2fr] md:gap-10">
+                    <h3 className="font-display text-3xl leading-tight">
+                      {service.title}
+                    </h3>
+
+                    <p className="leading-7 text-[#5F665F]">
+                      {service.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+
+              <Link
+                href="/services"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[#536857] hover:underline"
+              >
+                Explore all services
+                <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Preview */}
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-light">
-            Over 20 Years of Experience
-          </h2>
+      {/* Experience */}
+      <section className="px-6 py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
+          <div className="rounded-[2rem] bg-[#DDE3D8] px-8 py-12 sm:px-12 sm:py-16">
+            <p className="font-display text-7xl leading-none text-[#536857] sm:text-8xl">
+              20+
+            </p>
 
-          <p className="mt-8 text-lg leading-8 text-[#5F665F]">
-            Justine Roth, MS, RD, CEDS-S is a Registered Dietitian and Certified
-            Eating Disorders Specialist with more than two decades of experience
-            helping individuals and families navigate recovery with compassion,
-            collaboration, and evidence-based care.
-          </p>
+            <p className="mt-5 max-w-xs text-lg leading-7 text-[#4C574D]">
+              Years specializing in eating disorders and mental health
+              nutrition.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#536857]">
+              About Justine
+            </p>
+
+            <h2 className="font-display mt-5 text-5xl font-normal leading-[1.02] tracking-[-0.025em] sm:text-6xl">
+              Experienced care without judgment or rigid rules.
+            </h2>
+
+            <p className="mt-7 text-lg leading-8 text-[#5F665F]">
+              Justine Roth is a registered dietitian and Certified Eating
+              Disorders Specialist and Supervisor. Her approach combines
+              clinical expertise with practical, collaborative support tailored
+              to each client and family.
+            </p>
+
+            <Link
+              href="/about"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[#536857] hover:underline"
+            >
+              Meet Justine
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Groups */}
+      <section className="border-y border-[#DCD5CB] bg-[#F1EEE8] px-6 py-16">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#536857]">
+              Current Offerings
+            </p>
+
+            <h2 className="font-display mt-3 text-4xl font-normal">
+              Group schedule now available
+            </h2>
+
+            <p className="mt-3 max-w-2xl leading-7 text-[#5F665F]">
+              View current yoga, meal-support, mindfulness, and movement
+              groups.
+            </p>
+          </div>
 
           <Link
-            href="/about"
-            className="mt-10 inline-block rounded-full border border-[#536857] px-8 py-4 text-[#536857] transition hover:bg-white"
+            href="/groups"
+            className="inline-flex shrink-0 items-center justify-center rounded-full border border-[#536857] px-7 py-3.5 text-sm text-[#536857] transition hover:bg-[#536857] hover:text-white"
           >
-            Meet Justine
+            View Group Schedule
           </Link>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-[#536857] px-6 py-20 text-center text-white">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-4xl font-light">
-            Ready to get started?
+      <section className="bg-[#536857] px-6 py-20 text-[#FFFDF8] md:py-28">
+        <div className="mx-auto max-w-5xl text-center">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/70">
+            Get Started
+          </p>
+
+          <h2 className="font-display mx-auto mt-6 max-w-4xl text-5xl font-normal leading-[1] tracking-[-0.025em] sm:text-6xl md:text-7xl">
+            Nutrition care can feel supportive, flexible, and human.
           </h2>
 
-          <p className="mt-6 text-lg text-white/90">
-            Reach out to schedule an appointment or learn more about current
-            services and group offerings.
+          <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-white/80">
+            Reach out to ask a question, learn more about services, or schedule
+            an initial consultation.
           </p>
 
           <Link
             href="/contact"
-            className="mt-10 inline-block rounded-full bg-white px-8 py-4 font-medium text-[#536857] transition hover:bg-[#F8F5F0]"
+            className="mt-10 inline-flex rounded-full bg-[#FFFDF8] px-8 py-4 text-sm font-medium text-[#536857] transition hover:bg-white"
           >
             Contact Justine
           </Link>
