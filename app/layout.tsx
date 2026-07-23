@@ -38,26 +38,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geist.variable} ${cormorant.variable} bg-[#F8F5F0] font-sans text-[#2F332F] antialiased`}
+        className={`${geist.variable} ${cormorant.variable} bg-[#FCFDFE] font-sans text-[#2C3138] antialiased`}
       >
-        <header className="sticky top-0 z-50 border-b border-[#DED8CF] bg-[#FFFDF8]/95 backdrop-blur-md">
+        <header className="sticky top-0 z-50 border-b border-[#E3E9ED] bg-white/95 backdrop-blur-md">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6">
             <Link
               href="/"
-              className="font-display text-xl leading-none tracking-[-0.01em] text-[#2F332F] sm:text-2xl"
+              className="font-display text-xl leading-none tracking-[-0.01em] text-[#2C3138] sm:text-2xl"
             >
               Justine Roth Nutrition
             </Link>
 
             <nav
               aria-label="Main navigation"
-              className="hidden items-center gap-7 text-sm text-[#5F665F] md:flex"
+              className="hidden items-center gap-7 text-sm text-[#68727E] md:flex"
             >
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="transition hover:text-[#2F332F]"
+                  className="transition hover:text-[#617B91]"
                 >
                   {link.label}
                 </Link>
@@ -65,27 +65,27 @@ export default function RootLayout({
 
               <Link
                 href="/contact"
-                className="rounded-full bg-[#536857] px-5 py-2.5 text-white transition hover:bg-[#435646]"
+                className="rounded-full bg-[#7F96A8] px-5 py-2.5 text-white transition hover:bg-[#687F92]"
               >
                 Contact
               </Link>
             </nav>
 
             <details className="relative md:hidden">
-              <summary className="cursor-pointer list-none rounded-full border border-[#BFC5BC] px-4 py-2 text-sm text-[#2F332F]">
+              <summary className="cursor-pointer list-none rounded-full border border-[#C9D4DC] px-4 py-2 text-sm text-[#2C3138]">
                 Menu
               </summary>
 
               <nav
                 aria-label="Mobile navigation"
-                className="absolute right-0 top-12 w-56 rounded-2xl border border-[#E8E1D8] bg-[#FFFDF8] p-3 shadow-xl"
+                className="absolute right-0 top-12 w-56 rounded-2xl border border-[#E3E9ED] bg-white p-3 shadow-xl"
               >
                 <div className="flex flex-col">
                   {navLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="rounded-xl px-4 py-3 text-sm text-[#5F665F] transition hover:bg-[#F3F0EB] hover:text-[#2F332F]"
+                      className="rounded-xl px-4 py-3 text-sm text-[#68727E] transition hover:bg-[#F3F7F9] hover:text-[#2C3138]"
                     >
                       {link.label}
                     </Link>
@@ -93,7 +93,7 @@ export default function RootLayout({
 
                   <Link
                     href="/contact"
-                    className="mt-2 rounded-xl bg-[#536857] px-4 py-3 text-center text-sm text-white transition hover:bg-[#435646]"
+                    className="mt-2 rounded-xl bg-[#7F96A8] px-4 py-3 text-center text-sm text-white transition hover:bg-[#687F92]"
                   >
                     Contact
                   </Link>
@@ -105,10 +105,10 @@ export default function RootLayout({
 
         {children}
 
-        <footer className="border-t border-[#DED8CF] bg-[#FFFDF8] px-6 py-12">
-          <div className="mx-auto grid max-w-6xl gap-8 text-sm text-[#5F665F] md:grid-cols-[1fr_auto] md:items-end">
+        <footer className="border-t border-[#E3E9ED] bg-white px-6 py-10">
+          <div className="mx-auto flex max-w-6xl flex-col gap-8 text-sm text-[#68727E] md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="font-display text-2xl text-[#2F332F]">
+              <p className="font-display text-2xl text-[#2C3138]">
                 Justine Roth Nutrition
               </p>
 
@@ -117,12 +117,15 @@ export default function RootLayout({
                 adolescents, adults, and families.
               </p>
 
-              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3">
+              <nav
+                aria-label="Footer navigation"
+                className="mt-5 flex flex-wrap gap-x-5 gap-y-3"
+              >
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="transition hover:text-[#2F332F]"
+                    className="transition hover:text-[#617B91]"
                   >
                     {link.label}
                   </Link>
@@ -130,16 +133,14 @@ export default function RootLayout({
 
                 <Link
                   href="/contact"
-                  className="transition hover:text-[#2F332F]"
+                  className="transition hover:text-[#617B91]"
                 >
                   Contact
                 </Link>
-              </div>
+              </nav>
             </div>
 
-            <p>
-              © {new Date().getFullYear()} Justine Roth Nutrition
-            </p>
+            <p>© {new Date().getFullYear()} Justine Roth Nutrition</p>
           </div>
         </footer>
       </body>
