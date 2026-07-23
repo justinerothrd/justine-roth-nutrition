@@ -5,18 +5,21 @@ const yogaSchedule = [
     day: "Monday",
     time: "6:00–7:00 PM",
     className: "Gentle Yoga",
+    instructor: Nicole
     location: "Virtual",
   },
   {
     day: "Wednesday",
     time: "9:00–10:00 AM",
-    className: "Restorative Yoga",
+    className: "Breakfast Meal Support and Mindfulness",
+    instructor: Justine
     location: "Virtual",
   },
   {
     day: "Saturday",
     time: "10:00–11:00 AM",
-    className: "Mindful Movement",
+    className: "Mindful Eating and Movement",
+     instructor: Justine
     location: "In Person",
   },
 ];
@@ -35,8 +38,8 @@ export default function GroupsPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5F665F]">
-            Explore current groups designed to support mindful movement,
-            recovery, nutrition education, and connection.
+            Explore current groups designed to support mindful eating, movement,
+            recovery, and nutrition support. 
           </p>
         </div>
       </section>
