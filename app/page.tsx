@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#2F332F]">
       {/* Hero */}
-      <section className="px-6 py-24 md:py-32">
+      <section className="px-6 pt-16 pb-20 md:pt-20 md:pb-24">
         <div className="mx-auto max-w-5xl text-center">
           <p className="mb-5 text-sm font-medium uppercase tracking-[0.25em] text-[#536857]">
             Eating Disorder Nutrition Counseling
