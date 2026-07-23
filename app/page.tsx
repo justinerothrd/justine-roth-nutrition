@@ -1,103 +1,120 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function AboutPage() {
+export default function Home() {
   return (
-    <main className="bg-[#F8F5F0] text-[#2F332F]">
-      <section className="px-6 py-20 md:py-24">
-        <div className="mx-auto max-w-5xl">
-          <h1 className="max-w-4xl text-4xl font-light leading-tight sm:text-5xl md:text-6xl">
-            Helping individuals and families build a healthier relationship
-            with food.
+    <main className="min-h-screen bg-[#F8F5F0] text-[#2F332F]">
+      {/* Hero */}
+      <section className="px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-5xl text-center">
+          <p className="mb-5 text-sm font-medium uppercase tracking-[0.25em] text-[#536857]">
+            Eating Disorder Nutrition Counseling
+          </p>
+
+          <h1 className="mx-auto max-w-4xl text-5xl font-light leading-tight md:text-7xl">
+            Helping individuals and families build a healthier relationship with
+            food.
           </h1>
-        </div>
-      </section>
 
-      <section className="px-6 pb-20 md:pb-24">
-        <div className="mx-auto grid max-w-6xl items-start gap-12 md:grid-cols-[350px_1fr]">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
-            <Image
-              src="/justine-roth-headshot.jpg"
-              alt="Justine Roth, registered dietitian and eating disorder specialist"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 350px"
-              priority
-            />
-          </div>
+          <p className="mx-auto mt-8 max-w-3xl text-xl leading-8 text-[#5F665F]">
+            Compassionate, evidence-based nutrition counseling for adolescents,
+            adults, and families navigating eating disorders, recovery, ARFID,
+            and nutrition-related concerns.
+          </p>
 
-          <div>
-            <h2 className="text-3xl font-light">
-              Justine Roth, MS, RD, CEDS-S
-            </h2>
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="rounded-full bg-[#536857] px-8 py-4 text-white transition hover:bg-[#435646]"
+            >
+              Schedule a Consultation
+            </Link>
 
-            <div className="mt-8 space-y-6 text-lg leading-8 text-[#5F665F]">
-              <p>
-                I am a registered dietitian and Certified Eating Disorders
-                Specialist dedicated to helping adolescents, adults, and
-                families navigate eating disorders, recovery, and
-                nutrition-related concerns with compassion and practical
-                support.
-              </p>
-
-              <p>
-                For more than two decades, I have worked in eating disorders
-                and mental health nutrition, supporting individuals across
-                all stages of recovery and collaborating closely with
-                multidisciplinary treatment teams.
-              </p>
-
-              <p>
-                My approach is rooted in evidence-based care while recognizing
-                that every person&apos;s experience with food, body image, and
-                recovery is unique. I strive to create a supportive space where
-                clients feel heard, understood, and empowered.
-              </p>
-            </div>
+            <Link
+              href="/about"
+              className="rounded-full border border-[#536857] px-8 py-4 text-[#536857] transition hover:bg-white"
+            >
+              Learn More
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* Services */}
       <section className="bg-[#FFFDF8] px-6 py-20">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="mb-10 text-3xl font-light sm:text-4xl">
-            Credentials &amp; Experience
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-12 text-center text-4xl font-light">
+            How I Can Help
           </h2>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-3xl border border-[#E8E1D8] p-8">
-              <h3 className="text-xl font-medium">Education &amp; Credentials</h3>
-
-              <ul className="mt-5 space-y-3 text-[#5F665F]">
-                <li>Master of Science</li>
-                <li>Registered Dietitian</li>
-                <li>Certified Eating Disorders Specialist and Supervisor</li>
-              </ul>
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="rounded-3xl border border-[#E8E1D8] bg-[#F8F5F0] p-8">
+              <h3 className="text-2xl font-medium">Individual Counseling</h3>
+              <p className="mt-4 leading-7 text-[#5F665F]">
+                Personalized nutrition counseling for adolescents and adults
+                struggling with eating disorders and disordered eating.
+              </p>
             </div>
 
-            <div className="rounded-3xl border border-[#E8E1D8] p-8">
-              <h3 className="text-xl font-medium">Areas of Expertise</h3>
+            <div className="rounded-3xl border border-[#E8E1D8] bg-[#F8F5F0] p-8">
+              <h3 className="text-2xl font-medium">Family Support</h3>
+              <p className="mt-4 leading-7 text-[#5F665F]">
+                Guidance for parents and caregivers navigating meals, recovery,
+                and supporting a loved one.
+              </p>
+            </div>
 
-              <ul className="mt-5 space-y-3 text-[#5F665F]">
-                <li>Eating disorders and disordered eating</li>
-                <li>ARFID and selective eating</li>
-                <li>Adolescent and family support</li>
-                <li>Nutrition counseling</li>
-                <li>Professional consultation and supervision</li>
-              </ul>
+            <div className="rounded-3xl border border-[#E8E1D8] bg-[#F8F5F0] p-8">
+              <h3 className="text-2xl font-medium">Groups</h3>
+              <p className="mt-4 leading-7 text-[#5F665F]">
+                Yoga, meal support, mindfulness, and nutrition education groups
+                offered throughout the year.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-20 md:py-24">
+      {/* About Preview */}
+      <section className="px-6 py-24">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-light sm:text-4xl">My Philosophy</h2>
+          <h2 className="text-4xl font-light">
+            Over 20 Years of Experience
+          </h2>
 
-          <p className="mt-8 text-lg leading-8 text-[#5F665F] sm:text-xl sm:leading-9">
-            Recovery is not about perfection. It is about building trust,
-            flexibility, and confidence around food while creating a life that
-            feels meaningful and sustainable.
+          <p className="mt-8 text-lg leading-8 text-[#5F665F]">
+            Justine Roth, MS, RD, CEDS-S is a Registered Dietitian and Certified
+            Eating Disorders Specialist with more than two decades of experience
+            helping individuals and families navigate recovery with compassion,
+            collaboration, and evidence-based care.
           </p>
+
+          <Link
+            href="/about"
+            className="mt-10 inline-block rounded-full border border-[#536857] px-8 py-4 text-[#536857] transition hover:bg-white"
+          >
+            Meet Justine
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-[#536857] px-6 py-20 text-center text-white">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-4xl font-light">
+            Ready to get started?
+          </h2>
+
+          <p className="mt-6 text-lg text-white/90">
+            Reach out to schedule an appointment or learn more about current
+            services and group offerings.
+          </p>
+
+          <Link
+            href="/contact"
+            className="mt-10 inline-block rounded-full bg-white px-8 py-4 font-medium text-[#536857] transition hover:bg-[#F8F5F0]"
+          >
+            Contact Justine
+          </Link>
         </div>
       </section>
     </main>
