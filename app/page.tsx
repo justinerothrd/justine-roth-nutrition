@@ -5,7 +5,7 @@ const services = [
     title: "Eating Disorder Recovery",
     description:
       "Support for anorexia nervosa, bulimia nervosa, binge eating disorder, ARFID, and disordered eating.",
-  },
+  },<section className="border-b border-[#E4EBF0] px-6 py-12 md:py-16">
   {
     title: "Individual Nutrition Counseling",
     description:
@@ -22,8 +22,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
       {/* Hero */}
-      <section className="border-b border-[#E4EBF0] px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-5xl">
+      <section className="border-b border-[#E4EBF0] px-6 py-12 md:py-16">
+        <div className="mx-auto max-w-4xl">
           <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
             Eating Disorder Nutrition Counseling
           </p>
@@ -63,7 +63,7 @@ export default function Home() {
               href="/contact"
               className="inline-flex w-fit items-center justify-center rounded-md bg-[#829CB1] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#708A9F]"
             >
-              Schedule a Consultation
+              Contact
             </Link>
 
             <Link
