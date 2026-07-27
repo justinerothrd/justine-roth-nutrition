@@ -166,3 +166,6 @@ select {
 .divider {
   border-color: var(--border);
 }
+.font-heading {
+  font-family: var(--font-instrument), Arial, sans-serif;
+}
