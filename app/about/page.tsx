@@ -103,7 +103,7 @@ export default function AboutPage() {
 
           <p className="mt-8 text-xl leading-9 text-[#68727E]">
             It is about building trust, flexibility, and confidence around food
-            while creating a life that feels meaningful and sustainable.
+            and your body that feels sustainable.
           </p>
         </div>
       </section>
