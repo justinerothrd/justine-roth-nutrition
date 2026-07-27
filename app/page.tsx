@@ -128,8 +128,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[220px_1fr] md:gap-14">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-              Meet Justine
-            </p>
+  About
+</p>
 
             <p className="mt-5 text-4xl font-normal tracking-[-0.045em] text-[#7894AA]">
               20+
@@ -201,7 +201,7 @@ export default function Home() {
 
           <Link
             href="/contact"
-            className="inline-flex w-fit items-center justify-center rounded-md bg-[#829CB1] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#708A9F]"
+            className="inline-flex items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
           >
             Contact Justine
           </Link>
