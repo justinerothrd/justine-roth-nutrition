@@ -45,21 +45,10 @@ export default function ServicesPage() {
 
             <div>
               <h1 className="font-display text-6xl leading-[0.95] tracking-[-0.03em] md:text-7xl">
-                Nutrition care that meets you where you are.
+                Practical, evidence-based nutrition care that feels collaborative—not
+                overwhelming.
               </h1>
             </div>
-
-            <div>
-              <p className="text-xl leading-9 text-[#66717D]">
-                Every client arrives with a different story. Services are
-                individualized and designed to support recovery with practical,
-                evidence-based nutrition care that feels collaborative—not
-                overwhelming.
-              </p>
-            </div>
-
-          </div>
-
         </div>
       </section>
 
