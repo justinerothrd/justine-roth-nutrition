@@ -28,7 +28,7 @@ export default function Home() {
             Eating Disorder Nutrition Counseling
           </p>
 
-          <h1 className="mt-6 max-w-3xl text-4xl font-normal leading-[1.12] tracking-[-0.04em] sm:text-5xl md:text-[3.5rem]">
+          <h1 className="mt-6 max-w-3xl text-4xl font-normal leading-[1.12] tracking-[-0.04em] sm:text-3xl sm:text-4xl md:text-[3rem]">
             What does healthy mean to you?
           </h1>
 
