@@ -22,18 +22,18 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
       {/* Hero */}
-      <section className="px-6 py-16 sm:px-8 md:py-20 lg:px-10">
-        <div className="mx-auto max-w-4xl">
+      <section className="border-b border-[#E4EBF0] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-5xl">
           <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
             Eating Disorder Nutrition Counseling
           </p>
 
-          <h1 className="mt-6 max-w-3xl text-4xl font-normal leading-[1.12] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+          <h1 className="mt-6 max-w-3xl text-4xl font-normal leading-[1.12] tracking-[-0.04em] sm:text-5xl md:text-[3.5rem]">
             What does healthy mean to you?
           </h1>
 
-          <div className="mt-8 max-w-2xl space-y-5 text-lg leading-8 text-[#687785]">
-            <p>Healthy looks different for everyone.</p>
+          <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[#687785]">
+            <p>Healthy means something different for everyone.</p>
 
             <p>
               Too often, health becomes defined by the number on the scale,
@@ -48,28 +48,29 @@ export default function Home() {
             </p>
 
             <p>
-              My approach is practical, evidence-based, and collaborative—never
+              My approach is practical, evidence-based, and collaborative—not
               overwhelming.
             </p>
 
             <p className="font-medium text-[#34414E]">
-              Together, we&apos;ll discover what healthy looks like—for you.
+              Together, we&apos;ll work to define what healthy looks like—for
+              you.
             </p>
           </div>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-[#829CB1] px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#708A9F]"
+              className="inline-flex w-fit items-center justify-center rounded-md bg-[#829CB1] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#708A9F]"
             >
               Schedule a Consultation
             </Link>
 
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition hover:text-[#526D83]"
             >
-              Meet Justine
+              About Justine
               <span aria-hidden="true">→</span>
             </Link>
           </div>
@@ -77,63 +78,83 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="border-y border-[#E4EBF0] px-6 py-14 sm:px-8 md:py-16 lg:px-10">
+      <section className="border-b border-[#E4EBF0] px-6 py-14 md:py-16">
         <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-            How I Can Help
-          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+                How I Can Help
+              </p>
 
-          <div className="mt-8 border-t border-[#E4EBF0]">
-            {services.map((service) => (
+              <h2 className="mt-3 text-3xl font-normal tracking-[-0.035em]">
+                Practical, individualized support.
+              </h2>
+            </div>
+
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] hover:text-[#526D83]"
+            >
+              View all services
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+          <div className="mt-9 grid border-y border-[#E4EBF0] md:grid-cols-3">
+            {services.map((service, index) => (
               <article
                 key={service.title}
-                className="grid gap-3 border-b border-[#E4EBF0] py-7 md:grid-cols-[0.85fr_1.15fr] md:gap-12"
+                className={`py-7 md:px-7 ${
+                  index > 0
+                    ? "border-t border-[#E4EBF0] md:border-l md:border-t-0"
+                    : ""
+                }`}
               >
-                <h2 className="text-xl font-normal tracking-[-0.025em] text-[#34414E]">
+                <h3 className="text-xl font-normal tracking-[-0.025em]">
                   {service.title}
-                </h2>
+                </h3>
 
-                <p className="leading-7 text-[#687785]">
+                <p className="mt-4 text-sm leading-7 text-[#687785]">
                   {service.description}
                 </p>
               </article>
             ))}
           </div>
-
-          <Link
-            href="/services"
-            className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
-          >
-            View all services
-            <span aria-hidden="true">→</span>
-          </Link>
         </div>
       </section>
 
-      {/* About Preview */}
-      <section className="px-6 py-14 sm:px-8 md:py-16 lg:px-10">
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.65fr_1.35fr] md:gap-14">
+      {/* About */}
+      <section className="border-b border-[#E4EBF0] px-6 py-14 md:py-16">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[220px_1fr] md:gap-14">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
               Meet Justine
             </p>
+
+            <p className="mt-5 text-4xl font-normal tracking-[-0.045em] text-[#7894AA]">
+              20+
+            </p>
+
+            <p className="mt-2 text-sm leading-6 text-[#687785]">
+              Years of specialized experience
+            </p>
           </div>
 
           <div>
-            <h2 className="max-w-2xl text-3xl font-normal leading-tight tracking-[-0.035em] text-[#34414E]">
-              More than 20 years of specialized experience.
+            <h2 className="max-w-2xl text-3xl font-normal leading-tight tracking-[-0.035em]">
+              Experienced nutrition care without judgment or rigid rules.
             </h2>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#687785]">
-              Justine Roth, MS, RD, CEDS-S is a registered dietitian specializing
-              in eating disorders, ARFID, and nutrition counseling. She works
-              with adolescents, adults, and families using a practical,
-              evidence-based, non-diet approach.
+              Justine Roth, MS, RD, CEDS-S is a registered dietitian
+              specializing in eating disorders, ARFID, and nutrition
+              counseling. She works with adolescents, adults, and families
+              using a practical, evidence-based, non-diet approach.
             </p>
 
             <Link
               href="/about"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] hover:text-[#526D83]"
             >
               Read more about Justine
               <span aria-hidden="true">→</span>
@@ -143,7 +164,7 @@ export default function Home() {
       </section>
 
       {/* Groups */}
-      <section className="border-y border-[#E4EBF0] bg-[#F7FAFC] px-6 py-10 sm:px-8 lg:px-10">
+      <section className="border-b border-[#E4EBF0] bg-[#F7FAFC] px-6 py-10">
         <div className="mx-auto flex max-w-5xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
@@ -157,7 +178,7 @@ export default function Home() {
 
           <Link
             href="/groups"
-            className="inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
+            className="inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] hover:text-[#526D83]"
           >
             View schedule
             <span aria-hidden="true">→</span>
@@ -166,26 +187,24 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section className="px-6 py-14 sm:px-8 md:py-16 lg:px-10">
-        <div className="mx-auto max-w-5xl">
-          <div className="flex flex-col gap-6 border-b border-[#E4EBF0] pb-14 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-                Get Started
-              </p>
+      <section className="px-6 py-14 md:py-16">
+        <div className="mx-auto flex max-w-5xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+              Get Started
+            </p>
 
-              <h2 className="mt-4 text-3xl font-normal tracking-[-0.035em] text-[#34414E]">
-                Ready to take the next step?
-              </h2>
-            </div>
-
-            <Link
-              href="/contact"
-              className="inline-flex w-fit items-center justify-center rounded-md bg-[#829CB1] px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#708A9F]"
-            >
-              Contact Justine
-            </Link>
+            <h2 className="mt-3 text-3xl font-normal tracking-[-0.035em]">
+              Ready to take the next step?
+            </h2>
           </div>
+
+          <Link
+            href="/contact"
+            className="inline-flex w-fit items-center justify-center rounded-md bg-[#829CB1] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#708A9F]"
+          >
+            Contact Justine
+          </Link>
         </div>
       </section>
     </main>
