@@ -68,7 +68,7 @@ export default function Home() {
 
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition hover:text-[#526D83]"
+              className="inline-flex items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
             >
               About Justine
               <span aria-hidden="true">→</span>
