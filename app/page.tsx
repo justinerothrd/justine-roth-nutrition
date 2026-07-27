@@ -5,7 +5,7 @@ const services = [
     title: "Eating Disorder Recovery",
     description:
       "Support for anorexia nervosa, bulimia nervosa, binge eating disorder, ARFID, and disordered eating.",
-  },<section className="border-b border-[#E4EBF0] px-6 py-12 md:py-16">
+  },
   {
     title: "Individual Nutrition Counseling",
     description:
