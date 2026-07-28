@@ -131,7 +131,7 @@ export default function Home() {
             </h2>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#687785]">
-              Justine Roth, MS, RD, CEDS-S is a registered dietitian
+              Justine Roth, MS, RD, CEDS-C is a registered dietitian
               specializing in eating disorders, ARFID, and nutrition
               counseling. She works with adolescents, adults, and families
               using a practical, evidence-based, non-diet approach.
@@ -179,7 +179,7 @@ export default function Home() {
               Get Started
             </p>
 
-            <h2 className="mt-3 text-3xl font-normal tracking-[-0.035em]">
+            <section className="border-b border-[#E4EBF0] bg-[#F7FAFC] px-6 py-10">
               Ready to take the next step?
             </h2>
           </div>
