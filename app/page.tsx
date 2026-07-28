@@ -23,7 +23,8 @@ export default function Home() {
     <main className="min-h-screen bg-white text-[#34414E]">
       {/* Hero */}
       <section className="border-b border-[#E4EBF0] px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-5xl">
+  <div className="max-w-4xl">
           <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
             Eating Disorder Nutrition Counseling
           </p>
