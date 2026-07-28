@@ -6,16 +6,17 @@ export default function AboutPage() {
     <main className="min-h-screen bg-white text-[#34414E]">
       {/* Mobile introduction */}
       <section className="border-b border-[#E4EBF0] sm:hidden">
-        <div className="relative aspect-[5/4] w-full overflow-hidden bg-[#F3F7FA]">
-          <Image
-            src="/IMG_2310.jpeg"
-            alt="Justine Roth, registered dietitian and eating disorder specialist"
-            fill
-            className="object-cover object-top"
-            sizes="100vw"
-            priority
-          />
-        </div>
+        <div className="w-full bg-[#F3F7FA]">
+  <Image
+    src="/IMG_2310.jpeg"
+    alt="Justine Roth, registered dietitian and eating disorder specialist"
+    width={1200}
+    height={1500}
+    className="h-auto w-full"
+    sizes="100vw"
+    priority
+  />
+</div>
 
         <div className="px-6 py-9">
           <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1]">
@@ -23,7 +24,7 @@ export default function AboutPage() {
           </p>
 
           <h1 className="font-heading mt-4 text-[2rem] font-normal leading-[1.08] tracking-[-0.035em]">
-            Justine Roth, MS, RD, CEDS-C
+            Justine Roth, MS, RD, CEDS-S
           </h1>
 
           <div className="mt-6 space-y-4 text-base leading-7 text-[#687785]">
@@ -51,17 +52,16 @@ export default function AboutPage() {
       {/* Tablet and desktop introduction */}
       <section className="hidden border-b border-[#E4EBF0] px-6 py-12 sm:block md:py-16">
         <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[300px_1fr] md:items-start md:gap-14">
-          <div className="w-full bg-[#F3F7FA]">
-  <Image
-    src="/IMG_2310.jpeg"
-    alt="Justine Roth, registered dietitian and eating disorder specialist"
-    width={1200}
-    height={1500}
-    className="h-auto w-full"
-    sizes="100vw"
-    priority
-  />
-</div>
+          <div className="relative aspect-[4/5] overflow-hidden bg-[#F3F7FA]">
+            <Image
+              src="/IMG_2310.jpeg"
+              alt="Justine Roth, registered dietitian and eating disorder specialist"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 45vw, 300px"
+              priority
+            />
+          </div>
 
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
@@ -69,7 +69,7 @@ export default function AboutPage() {
             </p>
 
             <h1 className="font-heading mt-5 text-4xl font-normal leading-tight tracking-[-0.035em] md:text-[3rem]">
-              Justine Roth, MS, RD, CEDS-C
+              Justine Roth, MS, RD, CEDS-S
             </h1>
 
             <div className="mt-7 space-y-5 text-lg leading-8 text-[#687785]">
