@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Instrument_Sans, Plus_Jakarta_Sans } from "next/font/google";
-import { Instagram, Facebook } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import "./globals.css";
 
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Justine Roth Nutrition",
   },
   description:
-    "Eating disorder and nutrition counseling for adolescents, adults, and families.",
+    "Eating disorder and nutrition counseling for adolescents, adults, and families in New York City and virtually.",
 };
 
 const footerLinks = [
@@ -50,7 +49,6 @@ export default function RootLayout({
         <footer className="border-t border-[#E4EBF0] bg-white px-6 py-10">
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col gap-6 text-sm text-[#687785]">
-
               <div>
                 <p className="font-heading text-lg font-medium tracking-[-0.025em] text-[#34414E]">
                   Justine Roth Nutrition
@@ -85,7 +83,27 @@ export default function RootLayout({
                   aria-label="Instagram"
                   className="text-[#687785] transition-colors hover:text-[#718CA2]"
                 >
-                  <Instagram size={18} strokeWidth={1.75} />
+                  <svg
+                    aria-hidden="true"
+                    width="19"
+                    height="19"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle
+                      cx="17.5"
+                      cy="6.5"
+                      r="0.75"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
                 </a>
 
                 <a
@@ -95,14 +113,21 @@ export default function RootLayout({
                   aria-label="Facebook"
                   className="text-[#687785] transition-colors hover:text-[#718CA2]"
                 >
-                  <Facebook size={18} strokeWidth={1.75} />
+                  <svg
+                    aria-hidden="true"
+                    width="19"
+                    height="19"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.2c0-.9.3-1.5 1.6-1.5H17V5.1c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2H8v3h2.8v8h2.7z" />
+                  </svg>
                 </a>
               </div>
 
               <p className="text-xs text-[#9AA8B5]">
                 © {new Date().getFullYear()} Justine Roth Nutrition
               </p>
-
             </div>
           </div>
         </footer>
