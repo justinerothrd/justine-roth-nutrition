@@ -1,102 +1,174 @@
 export default function ContactPage() {
   return (
-    <main className="bg-[#F8F5F0] text-[#2F332F]">
-      <section className="px-6 py-24">
+    <main className="min-h-screen bg-white text-[#34414E]">
+      {/* Intro */}
+      <section className="border-b border-[#E4EBF0] px-6 py-12 md:py-16">
         <div className="mx-auto max-w-5xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-[#536857]">
-            Contact
-          </p>
+          <div className="max-w-3xl">
+            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+              Contact
+            </p>
 
-          <h1 className="max-w-4xl text-5xl font-light leading-tight md:text-6xl">
-            Let's connect.
-          </h1>
+            <h1 className="font-heading mt-5 text-3xl font-normal leading-tight tracking-[-0.035em] sm:text-4xl md:text-[3rem]">
+              Get in touch.
+            </h1>
 
-          <p className="mt-6 max-w-2xl text-xl leading-8 text-[#5F665F]">
-            Reach out to learn more about nutrition counseling,
-            eating disorder support, or consultation services.
-          </p>
+            <p className="mt-6 text-lg leading-8 text-[#687785]">
+              Reach out to learn more about eating disorder nutrition
+              counseling, ARFID support, family support, or professional
+              consultation.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="px-6 pb-24">
-        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1fr_420px]">
-          
-          <div className="rounded-[2rem] bg-[#FFFDF8] p-10 shadow-sm">
-            <h2 className="text-3xl font-light">
+      {/* Form and information */}
+      <section className="border-b border-[#E4EBF0] px-6 py-14 md:py-16">
+        <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-[1.2fr_0.8fr] md:gap-16">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
               Send a Message
-            </h2>
+            </p>
 
-            <form className="mt-8 space-y-5">
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full rounded-xl border border-[#E8E1D8] bg-white px-5 py-4 outline-none"
-              />
+            <form className="mt-7 space-y-6">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="mb-2 block text-sm font-medium text-[#34414E]"
+                >
+                  Name
+                </label>
 
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full rounded-xl border border-[#E8E1D8] bg-white px-5 py-4 outline-none"
-              />
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  className="w-full border-0 border-b border-[#C9D6DF] bg-transparent px-0 py-3 text-[#34414E] outline-none transition-colors placeholder:text-[#9AA6B1] focus:border-[#829CB1]"
+                />
+              </div>
 
-              <input
-                type="tel"
-                placeholder="Phone (optional)"
-                className="w-full rounded-xl border border-[#E8E1D8] bg-white px-5 py-4 outline-none"
-              />
+              <div>
+                <label
+                  htmlFor="email"
+                  className="mb-2 block text-sm font-medium text-[#34414E]"
+                >
+                  Email
+                </label>
 
-              <textarea
-                rows={6}
-                placeholder="How can I help?"
-                className="w-full rounded-xl border border-[#E8E1D8] bg-white px-5 py-4 outline-none"
-              />
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  className="w-full border-0 border-b border-[#C9D6DF] bg-transparent px-0 py-3 text-[#34414E] outline-none transition-colors placeholder:text-[#9AA6B1] focus:border-[#829CB1]"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="mb-2 block text-sm font-medium text-[#34414E]"
+                >
+                  Phone
+                  <span className="ml-1 font-normal text-[#82909C]">
+                    Optional
+                  </span>
+                </label>
+
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  className="w-full border-0 border-b border-[#C9D6DF] bg-transparent px-0 py-3 text-[#34414E] outline-none transition-colors placeholder:text-[#9AA6B1] focus:border-[#829CB1]"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="mb-2 block text-sm font-medium text-[#34414E]"
+                >
+                  How can I help?
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  className="w-full resize-y border-0 border-b border-[#C9D6DF] bg-transparent px-0 py-3 text-[#34414E] outline-none transition-colors placeholder:text-[#9AA6B1] focus:border-[#829CB1]"
+                />
+              </div>
 
               <button
                 type="submit"
-                className="rounded-full bg-[#536857] px-8 py-4 text-white transition hover:bg-[#435646]"
+                className="inline-flex items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
               >
                 Send Message
+                <span aria-hidden="true">→</span>
               </button>
             </form>
           </div>
 
-          <div className="rounded-[2rem] bg-[#FFFDF8] p-10 shadow-sm">
-            <h2 className="text-3xl font-light">
+          <aside className="border-t border-[#DCE6ED] pt-8 md:border-l md:border-t-0 md:pl-12 md:pt-0">
+            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
               Information
-            </h2>
+            </p>
 
-            <div className="mt-8 space-y-6 text-[#5F665F]">
-              <div>
-                <p className="font-medium text-[#2F332F]">
+            <div className="mt-7 divide-y divide-[#E4EBF0] border-y border-[#E4EBF0]">
+              <div className="py-6">
+                <h2 className="font-heading text-xl font-normal tracking-[-0.025em]">
                   Virtual Appointments
-                </p>
-                <p className="mt-2">
+                </h2>
+
+                <p className="mt-3 leading-7 text-[#687785]">
                   Available for adolescents, adults, and families.
                 </p>
               </div>
 
-              <div>
-                <p className="font-medium text-[#2F332F]">
+              <div className="py-6">
+                <h2 className="font-heading text-xl font-normal tracking-[-0.025em]">
                   Areas of Focus
-                </p>
-                <p className="mt-2">
-                  Eating Disorders, ARFID, Nutrition Counseling,
-                  Family Support, and Medical Nutrition Therapy.
+                </h2>
+
+                <p className="mt-3 leading-7 text-[#687785]">
+                  Eating disorders, ARFID, nutrition counseling, family
+                  support, and professional consultation.
                 </p>
               </div>
 
-              <div>
-                <p className="font-medium text-[#2F332F]">
+              <div className="py-6">
+                <h2 className="font-heading text-xl font-normal tracking-[-0.025em]">
                   Getting Started
-                </p>
-                <p className="mt-2">
-                  Complete the form and I will respond as soon as
-                  possible.
+                </h2>
+
+                <p className="mt-3 leading-7 text-[#687785]">
+                  Complete the form with a brief description of what you are
+                  looking for and the best way to reach you.
                 </p>
               </div>
             </div>
-          </div>
+          </aside>
+        </div>
+      </section>
 
+      {/* Closing */}
+      <section className="border-b border-[#DCE6ED] bg-[#F3F7FA] px-6 py-12 md:py-14">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+            Next Steps
+          </p>
+
+          <h2 className="font-heading mt-3 max-w-2xl text-3xl font-normal leading-tight tracking-[-0.03em]">
+            Share a little about what you are looking for.
+          </h2>
+
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-[#687785]">
+            Your message can include the type of support you are seeking,
+            whether care is for you or a family member, and any questions you
+            have about services.
+          </p>
         </div>
       </section>
     </main>
