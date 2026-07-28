@@ -4,100 +4,110 @@ import Link from "next/link";
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
-      {/* Mobile introduction */}
-      <section className="border-b border-[#E4EBF0] sm:hidden">
-        <div className="w-full bg-[#F3F7FA]">
-  <Image
-    src="/IMG_2310.jpeg"
-    alt="Justine Roth, registered dietitian and eating disorder specialist"
-    width={1200}
-    height={1500}
-    className="h-auto w-full"
-    sizes="100vw"
-    priority
-  />
-</div>
+      {/* Introduction */}
+<section className="border-b border-[#E4EBF0] px-6 py-10 md:py-16">
+  <div className="mx-auto max-w-5xl">
 
-        <div className="px-6 py-9">
-          <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1]">
-            About
+    {/* Mobile */}
+    <div className="flex items-start gap-5 md:hidden">
+      <div className="relative h-36 w-28 shrink-0 overflow-hidden rounded-xl bg-[#F3F7FA]">
+        <Image
+          src="/IMG_2310.jpeg"
+          alt="Justine Roth"
+          fill
+          className="object-cover object-top"
+          sizes="112px"
+          priority
+        />
+      </div>
+
+      <div className="min-w-0">
+        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#829CB1]">
+          About
+        </p>
+
+        <h1 className="mt-2 text-[2rem] font-normal leading-[1.05] tracking-[-0.04em] text-[#34414E]">
+          Justine Roth
+        </h1>
+
+        <p className="mt-1 text-base text-[#687785]">
+          MS, RD, CEDS-C
+        </p>
+
+        <p className="mt-4 text-[15px] leading-7 text-[#687785]">
+          Registered dietitian specializing in eating disorders,
+          ARFID, and nutrition counseling.
+        </p>
+      </div>
+    </div>
+
+    <div className="mt-8 space-y-5 text-base leading-7 text-[#687785] md:hidden">
+      <p>
+        For more than 20 years, I have worked with adolescents,
+        adults, and families in both private practice and
+        hospital-based eating disorder programs.
+      </p>
+
+      <p>
+        My approach combines evidence-based care with practical,
+        individualized support. Together, we work toward creating a
+        healthier relationship with food by normalizing eating
+        behaviors and developing the skills to make mindful decisions
+        around food and your body.
+      </p>
+    </div>
+
+    {/* Desktop */}
+    <div className="hidden md:grid md:grid-cols-[300px_1fr] md:gap-14">
+      <div className="relative aspect-[4/5] overflow-hidden bg-[#F3F7FA]">
+        <Image
+          src="/IMG_2310.jpeg"
+          alt="Justine Roth"
+          fill
+          className="object-cover"
+          sizes="300px"
+          priority
+        />
+      </div>
+
+      <div>
+        <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+          About
+        </p>
+
+        <h1 className="mt-5 text-[3rem] font-normal leading-tight tracking-[-0.035em]">
+          Justine Roth, MS, RD, CEDS-C
+        </h1>
+
+        <div className="mt-7 space-y-5 text-lg leading-8 text-[#687785]">
+          <p>
+            I am a registered dietitian and Certified Eating Disorders
+            Specialist dedicated to helping adolescents, adults, and
+            families navigate eating disorders, ARFID, recovery, and
+            nutrition-related concerns.
           </p>
 
-          <h1 className="font-heading mt-4 text-[2rem] font-normal leading-[1.08] tracking-[-0.035em]">
-            Justine Roth, MS, RD, CEDS-S
-          </h1>
+          <p>
+            For more than two decades, I have worked in eating
+            disorders and mental health nutrition, supporting
+            individuals across all stages of recovery and
+            collaborating closely with multidisciplinary treatment
+            teams.
+          </p>
 
-          <div className="mt-6 space-y-4 text-base leading-7 text-[#687785]">
-            <p>
-              I am a registered dietitian and Certified Eating Disorders
-              Specialist and Supervisor dedicated to helping adolescents,
-              adults, and families navigate eating disorders, ARFID, and
-              recovery.
-            </p>
-
-            <p>
-              For more than two decades, I have worked in eating disorders and
-              mental health nutrition across all stages of recovery.
-            </p>
-
-            <p>
-              My approach combines evidence-based care with practical,
-              individualized support designed to build greater trust and
-              confidence around food.
-            </p>
-          </div>
+          <p>
+            My approach combines evidence-based care with practical,
+            individualized support. Together, we work toward creating
+            a healthier relationship with food by normalizing eating
+            behaviors and developing the skills to make mindful
+            decisions around food and your body.
+          </p>
         </div>
-      </section>
+      </div>
+    </div>
 
-      {/* Tablet and desktop introduction */}
-      <section className="hidden border-b border-[#E4EBF0] px-6 py-12 sm:block md:py-16">
-        <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[300px_1fr] md:items-start md:gap-14">
-          <div className="relative aspect-[4/5] overflow-hidden bg-[#F3F7FA]">
-            <Image
-              src="/IMG_2310.jpeg"
-              alt="Justine Roth, registered dietitian and eating disorder specialist"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 45vw, 300px"
-              priority
-            />
-          </div>
-
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-              About
-            </p>
-
-            <h1 className="font-heading mt-5 text-4xl font-normal leading-tight tracking-[-0.035em] md:text-[3rem]">
-              Justine Roth, MS, RD, CEDS-S
-            </h1>
-
-            <div className="mt-7 space-y-5 text-lg leading-8 text-[#687785]">
-              <p>
-                I am a registered dietitian and Certified Eating Disorders
-                Specialist and Supervisor dedicated to helping adolescents,
-                adults, and families navigate eating disorders, ARFID,
-                recovery, and nutrition-related concerns.
-              </p>
-
-              <p>
-                For more than two decades, I have worked in eating disorders
-                and mental health nutrition, supporting individuals across all
-                stages of recovery and collaborating closely with
-                multidisciplinary treatment teams.
-              </p>
-
-              <p>
-                My approach combines evidence-based care with practical,
-                individualized support. Together, we work toward creating a
-                healthier relationship with food by normalizing eating
-                behaviors and developing the skills to make mindful decisions
-                around food and your body.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+  </div>
+</section>
 
       {/* Philosophy */}
       <section className="border-b border-[#DCE6ED] bg-[#F3F7FA] px-6 py-10 sm:py-12 md:py-16">
