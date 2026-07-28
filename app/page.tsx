@@ -18,7 +18,7 @@ const instrument = Instrument_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Justine Roth, MS, RD, CEDS-S",
+    default: "Justine Roth, MS, RD, CEDS-C",
     template: "%s | Justine Roth Nutrition",
   },
   description:
