@@ -77,7 +77,7 @@ export default function RootLayout({
 
               <div className="flex items-center gap-4">
                 <a
-                  href="https://www.instagram.com/honestmom.nutrition/"
+                  href="https://www.instagram.com/justinerothnutrition/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
