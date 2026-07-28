@@ -113,7 +113,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[220px_1fr] md:gap-14">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-              About
+              Meet Justine
             </p>
 
             <p className="font-heading mt-5 text-4xl font-normal tracking-[-0.045em] text-[#7894AA]">
