@@ -24,7 +24,7 @@ export default function AboutPage() {
             </p>
 
             <h1 className="font-heading mt-5 text-3xl font-normal leading-tight tracking-[-0.035em] sm:text-4xl md:text-[3rem]">
-              Justine Roth, MS, RD, CEDS-S
+              Justine Roth, MS, RD, CEDS-C
             </h1>
 
             <div className="mt-7 space-y-5 text-lg leading-8 text-[#687785]">
