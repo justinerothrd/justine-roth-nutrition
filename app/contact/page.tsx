@@ -14,9 +14,10 @@ export default function ContactPage() {
             </h1>
 
             <p className="mt-6 text-lg leading-8 text-[#687785]">
-              Reach out to learn more about eating disorder nutrition
-              counseling, ARFID support, family support, or professional
-              consultation.
+              Reach out to learn more about nutrition counseling, eating
+              disorder support, ARFID, family support, or professional
+              consultation. Appointments are available both in person in New
+              York City and virtually.
             </p>
           </div>
         </div>
@@ -119,11 +120,13 @@ export default function ContactPage() {
             <div className="mt-7 divide-y divide-[#E4EBF0] border-y border-[#E4EBF0]">
               <div className="py-6">
                 <h2 className="font-heading text-xl font-normal tracking-[-0.025em]">
-                  Virtual Appointments
+                  Appointment Options
                 </h2>
 
                 <p className="mt-3 leading-7 text-[#687785]">
-                  Available for adolescents, adults, and families.
+                  In-person appointments in New York City and virtual
+                  appointments are available for adolescents, adults, and
+                  families.
                 </p>
               </div>
 
@@ -166,8 +169,9 @@ export default function ContactPage() {
 
           <p className="mt-4 max-w-2xl text-lg leading-8 text-[#687785]">
             Your message can include the type of support you are seeking,
-            whether care is for you or a family member, and any questions you
-            have about services.
+            whether care is for you or a family member, your preference for
+            in-person or virtual appointments, and any questions you have about
+            services.
           </p>
         </div>
       </section>
