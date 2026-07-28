@@ -58,22 +58,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Link
-              href="/contact"
-              className="inline-flex w-fit items-center justify-center rounded-md bg-[#829CB1] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#708A9F]"
-            >
-              Contact
-            </Link>
-
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
-            >
-              About Justine
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
+    
         </div>
       </section>
 
