@@ -12,9 +12,9 @@ const services = [
       "Personalized care for adolescents and adults using a mindful, non-diet approach.",
   },
   {
-    title: "Families & Groups",
+    title: "Families & Caregivers",
     description:
-      "Support for parents and caregivers, meal support, mindfulness, and current group offerings.",
+      "Practical guidance for parents and caregivers supporting a loved one through meals, treatment, and recovery.",
   },
 ];
 
@@ -28,11 +28,11 @@ export default function Home() {
             Eating Disorder Nutrition Counseling
           </p>
 
-          <h1 className="mt-6 max-w-3xl text-4xl font-normal leading-[1.12] tracking-[-0.04em] sm:text-3xl sm:text-4xl md:text-[3rem]">
+          <h1 className="font-heading mt-6 max-w-3xl text-3xl font-normal leading-[1.1] tracking-[-0.035em] sm:text-4xl md:text-[3rem]">
             What does healthy mean to you?
           </h1>
 
-          <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[#687785]">
+          <div className="mt-7 max-w-3xl space-y-4 text-[1.05rem] leading-8 text-[#687785]">
             <p>Healthy means something different for everyone.</p>
 
             <p>
@@ -57,8 +57,6 @@ export default function Home() {
               you.
             </p>
           </div>
-
-    
         </div>
       </section>
 
@@ -71,14 +69,14 @@ export default function Home() {
                 How I Can Help
               </p>
 
-              <h2 className="mt-3 text-3xl font-normal tracking-[-0.035em]">
+              <h2 className="font-heading mt-3 text-3xl font-normal tracking-[-0.03em]">
                 Practical, individualized support.
               </h2>
             </div>
 
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] hover:text-[#526D83]"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
             >
               View all services
               <span aria-hidden="true">→</span>
@@ -95,7 +93,7 @@ export default function Home() {
                     : ""
                 }`}
               >
-                <h3 className="text-xl font-normal tracking-[-0.025em]">
+                <h3 className="font-heading text-xl font-normal tracking-[-0.025em]">
                   {service.title}
                 </h3>
 
@@ -113,10 +111,10 @@ export default function Home() {
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[220px_1fr] md:gap-14">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-  About
-</p>
+              About
+            </p>
 
-            <p className="mt-5 text-4xl font-normal tracking-[-0.045em] text-[#7894AA]">
+            <p className="font-heading mt-5 text-4xl font-normal tracking-[-0.045em] text-[#7894AA]">
               20+
             </p>
 
@@ -126,12 +124,12 @@ export default function Home() {
           </div>
 
           <div>
-            <h2 className="max-w-2xl text-3xl font-normal leading-tight tracking-[-0.035em]">
+            <h2 className="font-heading max-w-2xl text-3xl font-normal leading-tight tracking-[-0.03em]">
               Experienced nutrition care without judgment or rigid rules.
             </h2>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#687785]">
-              Justine Roth, MS, RD, CEDS-C is a registered dietitian
+              Justine Roth, MS, RD, CEDS-S is a registered dietitian
               specializing in eating disorders, ARFID, and nutrition
               counseling. She works with adolescents, adults, and families
               using a practical, evidence-based, non-diet approach.
@@ -139,7 +137,7 @@ export default function Home() {
 
             <Link
               href="/about"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] hover:text-[#526D83]"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
             >
               Read more about Justine
               <span aria-hidden="true">→</span>
@@ -148,48 +146,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Groups */}
-      <section className="border-b border-[#E4EBF0] bg-[#F7FAFC] px-6 py-10">
-        <div className="mx-auto flex max-w-5xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-              Current Groups
-            </p>
-
-            <p className="mt-2 text-lg text-[#34414E]">
-              View the current group schedule and registration information.
-            </p>
-          </div>
-
-          <Link
-            href="/groups"
-            className="inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] hover:text-[#526D83]"
-          >
-            View schedule
-            <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      </section>
-
       {/* Contact */}
-      <section className="px-6 py-14 md:py-16">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-              Get Started
-            </p>
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-5xl border border-[#C9D8E4] bg-[#F7FAFC] px-8 py-12 sm:px-10 md:px-14 md:py-14">
+          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+                Get Started
+              </p>
 
-            <h2 className="mt-3 text-3xl font-normal tracking-[-0.035em]">
-              Ready to take the next step?
-            </h2>
+              <h2 className="font-heading mt-3 text-3xl font-normal leading-tight tracking-[-0.03em]">
+                Ready to take the next step?
+              </h2>
+
+              <p className="mt-5 text-lg leading-8 text-[#687785]">
+                Whether you are looking for individual nutrition counseling,
+                family support, or simply have questions about working together,
+                I&apos;d be happy to hear from you.
+              </p>
+            </div>
+
+            <Link
+              href="/contact"
+              className="inline-flex w-fit shrink-0 items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
+            >
+              Schedule a Consultation
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
-          >
-            Contact Justine
-          </Link>
         </div>
       </section>
     </main>
