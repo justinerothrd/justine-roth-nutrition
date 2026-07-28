@@ -51,16 +51,17 @@ export default function AboutPage() {
       {/* Tablet and desktop introduction */}
       <section className="hidden border-b border-[#E4EBF0] px-6 py-12 sm:block md:py-16">
         <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[300px_1fr] md:items-start md:gap-14">
-          <div className="relative aspect-[4/5] overflow-hidden bg-[#F3F7FA]">
-            <Image
-              src="/IMG_2310.jpeg"
-              alt="Justine Roth, registered dietitian and eating disorder specialist"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 45vw, 300px"
-              priority
-            />
-          </div>
+          <div className="w-full bg-[#F3F7FA]">
+  <Image
+    src="/IMG_2310.jpeg"
+    alt="Justine Roth, registered dietitian and eating disorder specialist"
+    width={1200}
+    height={1500}
+    className="h-auto w-full"
+    sizes="100vw"
+    priority
+  />
+</div>
 
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
