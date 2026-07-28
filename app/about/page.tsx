@@ -9,7 +9,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[300px_1fr] md:items-start md:gap-14">
           <div className="relative aspect-[4/5] overflow-hidden bg-[#F3F7FA]">
             <Image
-              src="/IMG2310.jpeg"
+              src="/IMG_2310.jpeg"
               alt="Justine Roth, registered dietitian and eating disorder specialist"
               fill
               className="object-cover"
