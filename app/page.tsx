@@ -1,179 +1,137 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { Instrument_Sans, Plus_Jakarta_Sans } from "next/font/google";
+import SiteHeader from "@/components/SiteHeader";
+import "./globals.css";
 
-const services = [
-  {
-    title: "Eating Disorder Recovery",
-    description:
-      "Support for anorexia nervosa, bulimia nervosa, binge eating disorder, ARFID, and disordered eating.",
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
+const instrument = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "Justine Roth, MS, RD, CEDS-S",
+    template: "%s | Justine Roth Nutrition",
   },
-  {
-    title: "Individual Nutrition Counseling",
-    description:
-      "Personalized care for adolescents and adults using a mindful, non-diet approach.",
-  },
-  {
-    title: "Families & Caregivers",
-    description:
-      "Practical guidance for parents and caregivers supporting a loved one through meals, treatment, and recovery.",
-  },
+  description:
+    "Eating disorder and nutrition counseling for adolescents, adults, and families in New York City and virtually.",
+};
+
+const footerLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/contact", label: "Contact" },
 ];
 
-export default function Home() {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <main className="min-h-screen bg-white text-[#34414E]">
-      {/* Hero */}
-<section className="border-b border-[#E4EBF0] px-5 py-8 sm:px-6 sm:py-12 md:py-16">
-  <div className="mx-auto max-w-5xl">
-    <div className="max-w-4xl">
-      <p className="text-[0.62rem] font-medium uppercase leading-4 tracking-[0.17em] text-[#829CB1] sm:text-xs sm:leading-5 sm:tracking-[0.26em]">
-        Eating Disorder Nutrition Counseling
-      </p>
+    <html lang="en">
+      <body
+        className={`${jakarta.variable} ${instrument.variable} min-h-screen bg-white text-[#34414E] antialiased`}
+      >
+        <SiteHeader />
 
-      <h1 className="font-heading mt-4 max-w-3xl text-[1.9rem] font-normal leading-[1.08] tracking-[-0.035em] sm:mt-5 sm:text-4xl md:text-[3rem]">
-        What does healthy mean to you?
-      </h1>
+        {children}
 
-      <div className="mt-5 max-w-3xl space-y-3 text-[0.94rem] leading-[1.65] text-[#687785] sm:mt-6 sm:space-y-4 sm:text-[1.05rem] sm:leading-8">
-        <p>Healthy means something different for everyone.</p>
-
-        <p>
-          Health often becomes defined by the number on the scale,
-          yesterday&apos;s workout, or the foods we believe we should or
-          shouldn&apos;t eat.
-        </p>
-
-        <p>
-          Nutrition counseling can help reduce stress around food and support a
-          more flexible, confident, and sustainable relationship with eating.
-        </p>
-
-        <p>
-          My approach is practical, evidence-based, and collaborative—not
-          overwhelming.
-        </p>
-
-        <p className="font-medium text-[#34414E]">
-          Together, we&apos;ll work to define what healthy looks like—for you.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* Services */}
-      <section className="border-b border-[#E4EBF0] px-6 py-14 md:py-16">
-        <div className="mx-auto max-w-5xl">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-                How I Can Help
-              </p>
-
-              <h2 className="font-heading mt-3 text-3xl font-normal tracking-[-0.03em]">
-                Practical, individualized support.
-              </h2>
-            </div>
-
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
-            >
-              View all services
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-
-          <div className="mt-9 grid border-y border-[#E4EBF0] md:grid-cols-3">
-            {services.map((service, index) => (
-              <article
-                key={service.title}
-                className={`py-7 md:px-7 ${
-                  index > 0
-                    ? "border-t border-[#E4EBF0] md:border-l md:border-t-0"
-                    : ""
-                }`}
-              >
-                <h3 className="font-heading text-xl font-normal tracking-[-0.025em]">
-                  {service.title}
-                </h3>
-
-                <p className="mt-4 text-sm leading-7 text-[#687785]">
-                  {service.description}
+        <footer className="border-t border-[#E4EBF0] bg-white px-6 py-10">
+          <div className="mx-auto max-w-6xl">
+            <div className="flex flex-col gap-6 text-sm text-[#687785]">
+              <div>
+                <p className="font-heading text-lg font-medium tracking-[-0.025em] text-[#34414E]">
+                  Justine Roth Nutrition
                 </p>
-              </article>
-            ))}
+
+                <p className="mt-2 max-w-md leading-6">
+                  Eating disorder and nutrition counseling for adolescents,
+                  adults, and families.
+                </p>
+              </div>
+
+              <nav
+                aria-label="Footer navigation"
+                className="flex flex-wrap gap-x-6 gap-y-3"
+              >
+                {footerLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="transition-colors hover:text-[#526D83]"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+
+              <div className="flex items-center gap-4">
+                <a
+                  href="https://www.instagram.com/honestmom.nutrition/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="text-[#687785] transition-colors hover:text-[#718CA2]"
+                >
+                  <svg
+                    aria-hidden="true"
+                    width="19"
+                    height="19"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle
+                      cx="17.5"
+                      cy="6.5"
+                      r="0.75"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/justinerothnutrition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="text-[#687785] transition-colors hover:text-[#718CA2]"
+                >
+                  <svg
+                    aria-hidden="true"
+                    width="19"
+                    height="19"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.2c0-.9.3-1.5 1.6-1.5H17V5.1c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2H8v3h2.8v8h2.7z" />
+                  </svg>
+                </a>
+              </div>
+
+              <p className="text-xs text-[#9AA8B5]">
+                © {new Date().getFullYear()} Justine Roth Nutrition
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section className="border-b border-[#E4EBF0] px-6 py-14 md:py-16">
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[220px_1fr] md:gap-14">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-              About
-            </p>
-
-            <p className="font-heading mt-5 text-4xl font-normal tracking-[-0.045em] text-[#7894AA]">
-              20+
-            </p>
-
-            <p className="mt-2 text-sm leading-6 text-[#687785]">
-              Years of specialized experience
-            </p>
-          </div>
-
-          <div>
-            <h2 className="font-heading max-w-2xl text-3xl font-normal leading-tight tracking-[-0.03em]">
-              Experienced nutrition care without judgment or rigid rules.
-            </h2>
-
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-[#687785]">
-              Justine Roth, MS, RD, CEDS-S is a registered dietitian
-              specializing in eating disorders, ARFID, and nutrition
-              counseling. She works with adolescents, adults, and families
-              using a practical, evidence-based, non-diet approach.
-            </p>
-
-            <Link
-              href="/about"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
-            >
-              Read more about Justine
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section className="border-b border-[#DCE6ED] bg-[#F3F7FA] px-6 py-14 md:py-16">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-              Get Started
-            </p>
-
-            <h2 className="font-heading mt-3 text-3xl font-normal leading-tight tracking-[-0.03em]">
-              Ready to take the next step?
-            </h2>
-
-            <p className="mt-4 text-lg leading-8 text-[#687785]">
-              Whether you are looking for individual nutrition counseling,
-              family support, or simply have questions about working together,
-              I&apos;d be happy to hear from you.
-            </p>
-          </div>
-
-          <Link
-            href="/contact"
-            className="inline-flex w-fit shrink-0 items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
-          >
-            Schedule a Consultation
-            <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      </section>
-    </main>
+        </footer>
+      </body>
+    </html>
   );
 }
