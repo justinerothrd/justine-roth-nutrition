@@ -9,136 +9,159 @@ const services = [
   {
     title: "Individual Nutrition Counseling",
     description:
-      "Nutrition counseling for adolescents and adults, including diabetes, pediatric nutrition, hypertension, sports nutrition, and mindful eating.",
+      "Personalized nutrition counseling for adolescents and adults, including pediatric nutrition, diabetes, hypertension, sports nutrition, mindful eating, and other nutrition-related concerns.",
   },
   {
     title: "Family & Parent Support",
     description:
-      "Helping parents and caregivers navigate meals, treatment recommendations, school concerns, and recovery at home.",
+      "Practical guidance for parents and caregivers navigating meals, treatment recommendations, school concerns, and recovery at home.",
   },
   {
     title: "ARFID Support",
     description:
-      "Evidence-based support for selective eating, sensory sensitivities, fear of adverse consequences, and limited food variety.",
+      "Evidence-based support for selective eating, sensory sensitivities, fear of adverse consequences, limited food variety, and low appetite.",
   },
   {
     title: "Professional Consultation",
     description:
-      "Consultation for clinicians, treatment programs, schools, and healthcare professionals seeking eating disorder nutrition expertise.",
+      "Consultation for clinicians, treatment programs, schools, and healthcare professionals seeking specialized eating disorder nutrition expertise.",
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="bg-[#FCFDFE] text-[#2C3138]">
-
-      {/* Hero */}
-
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-
-          <p className="mb-5 text-xs uppercase tracking-[0.35em] text-[#7F96A8]">
-            SERVICES
+    <main className="min-h-screen bg-white text-[#34414E]">
+      {/* Introduction */}
+      <section className="border-b border-[#E4EBF0] px-6 py-12 md:py-16">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+            Services
           </p>
 
-          <div className="grid gap-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <h1 className="font-heading mt-6 max-w-3xl text-3xl font-normal leading-[1.1] tracking-[-0.035em] sm:text-4xl md:text-[3rem]">
+            Nutrition care that meets you where you are.
+          </h1>
 
-            <div>
-              <h1 className="font-display text-6xl leading-[0.95] tracking-[-0.03em] md:text-7xl">
-                Nutrition care that meets you where you are.
-              </h1>
-            </div>
+          <p className="mt-7 max-w-3xl text-lg leading-8 text-[#687785]">
+            Every client arrives with a different story. Services are
+            individualized and designed to provide practical, evidence-based
+            nutrition care that feels collaborative—not overwhelming.
+          </p>
+        </div>
+      </section>
 
-            <div>
-              <p className="text-xl leading-9 text-[#66717D]">
-                Every client arrives with a different story. Services are
-                individualized and designed to support recovery with practical,
-                evidence-based nutrition care that feels collaborative—not
-                overwhelming.
-              </p>
-            </div>
+      {/* Services */}
+      <section className="border-b border-[#E4EBF0] px-6 py-14 md:py-16">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+            How We Can Work Together
+          </p>
 
+          <div className="mt-8 border-t border-[#E4EBF0]">
+            {services.map((service) => (
+              <article
+                key={service.title}
+                className="grid gap-4 border-b border-[#E4EBF0] py-8 md:grid-cols-[0.85fr_1.15fr] md:gap-14"
+              >
+                <h2 className="font-heading text-2xl font-normal leading-tight tracking-[-0.025em]">
+                  {service.title}
+                </h2>
+
+                <p className="max-w-xl leading-7 text-[#687785]">
+                  {service.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="border-b border-[#DCE6ED] bg-[#F3F7FA] px-6 py-14 md:py-16">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.75fr_1.25fr] md:gap-14">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+              My Approach
+            </p>
+
+            <h2 className="font-heading mt-4 text-3xl font-normal leading-tight tracking-[-0.03em]">
+              Nutrition care should feel supportive, not rigid.
+            </h2>
           </div>
 
+          <div className="space-y-5 text-lg leading-8 text-[#687785]">
+            <p>
+              Treatment is collaborative, individualized, and grounded in
+              current evidence.
+            </p>
+
+            <p>
+              When appropriate, care is coordinated with therapists,
+              physicians, psychiatrists, schools, and other members of the
+              treatment team.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Service Cards */}
+      {/* Groups */}
+      <section className="border-b border-[#E4EBF0] px-6 py-14 md:py-16">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.75fr_1.25fr] md:gap-14">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+              Group Programs
+            </p>
 
-      <section className="px-6 pb-24">
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+            <h2 className="font-heading mt-4 text-3xl font-normal leading-tight tracking-[-0.03em]">
+              Current group offerings
+            </h2>
+          </div>
 
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="rounded-[32px] border border-[#E5ECF1] bg-white p-10 transition hover:-translate-y-1 hover:shadow-lg"
+          <div>
+            <p className="text-lg leading-8 text-[#687785]">
+              Group programs may include yoga, breakfast meal support,
+              mindfulness, mindful eating, and movement. Offerings and
+              availability may change throughout the year.
+            </p>
+
+            <Link
+              href="/groups"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
             >
-
-              <h2 className="font-display text-4xl leading-tight">
-                {service.title}
-              </h2>
-
-              <p className="mt-6 leading-8 text-[#66717D]">
-                {service.description}
-              </p>
-
-            </div>
-          ))}
-
+              View the current group schedule
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Philosophy */}
+      {/* Contact */}
+      <section className="border-b border-[#DCE6ED] bg-[#F3F7FA] px-6 py-14 md:py-16">
+        <div className="mx-auto flex max-w-5xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+              Get Started
+            </p>
 
-      <section className="bg-[#F4F8FB] px-6 py-24">
+            <h2 className="font-heading mt-3 text-3xl font-normal leading-tight tracking-[-0.03em]">
+              Not sure which service is the right fit?
+            </h2>
 
-        <div className="mx-auto max-w-5xl">
-
-          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-[#7F96A8]">
-            MY APPROACH
-          </p>
-
-          <h2 className="font-display text-5xl leading-tight md:text-6xl">
-            Nutrition care should feel supportive, not rigid.
-          </h2>
-
-          <p className="mt-8 max-w-3xl text-xl leading-9 text-[#66717D]">
-            Treatment is collaborative, individualized, and grounded in current
-            evidence. Whenever appropriate, care is coordinated with therapists,
-            physicians, psychiatrists, schools, and other members of the
-            treatment team.
-          </p>
-
-        </div>
-
-      </section>
-
-      {/* CTA */}
-
-      <section className="px-6 py-24">
-
-        <div className="mx-auto max-w-5xl rounded-[40px] bg-[#DDEAF3] p-16 text-center">
-
-          <h2 className="font-display text-5xl md:text-6xl">
-            Ready to get started?
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#66717D]">
-            If you're unsure where to begin, I'm happy to answer questions and
-            help determine the best next step.
-          </p>
+            <p className="mt-4 text-lg leading-8 text-[#687785]">
+              Reach out with questions or to discuss what type of support may
+              be most appropriate.
+            </p>
+          </div>
 
           <Link
             href="/contact"
-            className="mt-10 inline-flex rounded-full bg-[#7F96A8] px-8 py-4 text-white transition hover:bg-[#6D8599]"
+            className="inline-flex w-fit shrink-0 items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
           >
             Schedule a Consultation
+            <span aria-hidden="true">→</span>
           </Link>
-
         </div>
-
       </section>
-
     </main>
   );
 }
