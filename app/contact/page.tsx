@@ -15,7 +15,7 @@ export default function ContactPage() {
 
             <p className="mt-5 text-lg leading-8 text-[#687785]">
               In-person appointments in New York City and virtual appointments
-              are available.
+              available.
             </p>
           </div>
         </div>
