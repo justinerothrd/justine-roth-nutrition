@@ -26,17 +26,18 @@ export default function Home() {
         <div className="mx-auto max-w-5xl">
           <div className="max-w-4xl">
             <p className="text-[0.68rem] font-medium uppercase leading-5 tracking-[0.24em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
-  Eating Disorder Nutrition Counseling
-</p>
+              Eating Disorder Nutrition Counseling
+            </p>
 
-          <h1 className="font-heading mt-5 max-w-3xl text-[2.35rem] font-normal leading-[1.08] tracking-[-0.035em] sm:text-4xl md:text-[3rem]">
-  What does healthy mean to you?
-</h1>
+            <h1 className="font-heading mt-5 max-w-3xl text-[2.35rem] font-normal leading-[1.08] tracking-[-0.035em] sm:text-4xl md:text-[3rem]">
+              What does healthy mean to you?
+            </h1>
 
-            <div className="mt-6 max-w-3xl space-y-4 text-base leading-7 text-[#687785] sm:text-[1.05rem] sm:leading-8"
+            <div className="mt-6 max-w-3xl space-y-4 text-base leading-7 text-[#687785] sm:text-[1.05rem] sm:leading-8">
+              <p>Healthy means something different for everyone.</p>
 
               <p>
-                Healthy often becomes defined by the number on the scale,
+                Health often becomes defined by the number on the scale,
                 yesterday&apos;s workout, or the foods we believe we should or
                 shouldn&apos;t eat.
               </p>
@@ -44,7 +45,7 @@ export default function Home() {
               <p>
                 Nutrition counseling can help reduce stress around food and
                 support a more flexible, confident, and sustainable relationship
-                with food and your body. 
+                with eating.
               </p>
 
               <p>
@@ -130,7 +131,7 @@ export default function Home() {
             </h2>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#687785]">
-              Justine Roth, MS, RD, CEDS-C is a registered dietitian
+              Justine Roth, MS, RD, CEDS-S is a registered dietitian
               specializing in eating disorders, ARFID, and nutrition
               counseling. She works with adolescents, adults, and families
               using a practical, evidence-based, non-diet approach.
