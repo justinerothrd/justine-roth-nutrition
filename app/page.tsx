@@ -129,7 +129,7 @@ export default function Home() {
             </h2>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#687785]">
-              Justine Roth, MS, RD, CEDS-S is a registered dietitian
+              Justine Roth, MS, RD, CEDS-C is a registered dietitian
               specializing in eating disorders, ARFID, and nutrition
               counseling. She works with adolescents, adults, and families
               using a practical, evidence-based, non-diet approach.
@@ -147,35 +147,33 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section className="px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-5xl border border-[#C9D8E4] bg-[#F7FAFC] px-8 py-12 sm:px-10 md:px-14 md:py-14">
-          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-2xl">
-              <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-                Get Started
-              </p>
+<section className="border-b border-[#DCE6ED] bg-[#F3F7FA] px-6 py-14 md:py-16">
+  <div className="mx-auto flex max-w-5xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
+    <div className="max-w-2xl">
+      <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+        Get Started
+      </p>
 
-              <h2 className="font-heading mt-3 text-3xl font-normal leading-tight tracking-[-0.03em]">
-                Ready to take the next step?
-              </h2>
+      <h2 className="font-heading mt-3 text-3xl font-normal leading-tight tracking-[-0.03em]">
+        Ready to take the next step?
+      </h2>
 
-              <p className="mt-5 text-lg leading-8 text-[#687785]">
-                Whether you are looking for individual nutrition counseling,
-                family support, or simply have questions about working together,
-                I&apos;d be happy to hear from you.
-              </p>
-            </div>
+      <p className="mt-4 text-lg leading-8 text-[#687785]">
+        Whether you are looking for individual nutrition counseling, family
+        support, or simply have questions about working together, I&apos;d be
+        happy to hear from you.
+      </p>
+    </div>
 
-            <Link
-              href="/contact"
-              className="inline-flex w-fit shrink-0 items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
-            >
-              Schedule a Consultation
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+    <Link
+      href="/contact"
+      className="inline-flex w-fit shrink-0 items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
+    >
+      Schedule a Consultation
+      <span aria-hidden="true">→</span>
+    </Link>
+  </div>
+</section>
     </main>
   );
 }
