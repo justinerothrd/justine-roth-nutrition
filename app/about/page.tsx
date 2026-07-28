@@ -23,7 +23,7 @@ export default function AboutPage() {
           </p>
 
           <h1 className="font-heading mt-4 text-[2rem] font-normal leading-[1.08] tracking-[-0.035em]">
-            Justine Roth, MS, RD, CEDS-S
+            Justine Roth, MS, RD, CEDS-C
           </h1>
 
           <div className="mt-6 space-y-4 text-base leading-7 text-[#687785]">
@@ -69,7 +69,7 @@ export default function AboutPage() {
             </p>
 
             <h1 className="font-heading mt-5 text-4xl font-normal leading-tight tracking-[-0.035em] md:text-[3rem]">
-              Justine Roth, MS, RD, CEDS-S
+              Justine Roth, MS, RD, CEDS-C
             </h1>
 
             <div className="mt-7 space-y-5 text-lg leading-8 text-[#687785]">
