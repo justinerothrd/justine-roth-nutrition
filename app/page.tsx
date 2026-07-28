@@ -22,45 +22,43 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
       {/* Hero */}
-      <section className="border-b border-[#E4EBF0] px-6 py-10 sm:py-12 md:py-16">
-        <div className="mx-auto max-w-5xl">
-          <div className="max-w-4xl">
-            <p className="text-[0.68rem] font-medium uppercase leading-5 tracking-[0.24em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
-              Eating Disorder Nutrition Counseling
-            </p>
+<section className="border-b border-[#E4EBF0] px-5 py-8 sm:px-6 sm:py-12 md:py-16">
+  <div className="mx-auto max-w-5xl">
+    <div className="max-w-4xl">
+      <p className="text-[0.62rem] font-medium uppercase leading-4 tracking-[0.17em] text-[#829CB1] sm:text-xs sm:leading-5 sm:tracking-[0.26em]">
+        Eating Disorder Nutrition Counseling
+      </p>
 
-            <h1 className="font-heading mt-5 max-w-3xl text-[2.35rem] font-normal leading-[1.08] tracking-[-0.035em] sm:text-4xl md:text-[3rem]">
-              What does healthy mean to you?
-            </h1>
+      <h1 className="font-heading mt-4 max-w-3xl text-[1.9rem] font-normal leading-[1.08] tracking-[-0.035em] sm:mt-5 sm:text-4xl md:text-[3rem]">
+        What does healthy mean to you?
+      </h1>
 
-            <div className="mt-6 max-w-3xl space-y-4 text-base leading-7 text-[#687785] sm:text-[1.05rem] sm:leading-8">
-              <p>Healthy means something different for everyone.</p>
+      <div className="mt-5 max-w-3xl space-y-3 text-[0.94rem] leading-[1.65] text-[#687785] sm:mt-6 sm:space-y-4 sm:text-[1.05rem] sm:leading-8">
+        <p>Healthy means something different for everyone.</p>
 
-              <p>
-                Health often becomes defined by the number on the scale,
-                yesterday&apos;s workout, or the foods we believe we should or
-                shouldn&apos;t eat.
-              </p>
+        <p>
+          Health often becomes defined by the number on the scale,
+          yesterday&apos;s workout, or the foods we believe we should or
+          shouldn&apos;t eat.
+        </p>
 
-              <p>
-                Nutrition counseling can help reduce stress around food and
-                support a more flexible, confident, and sustainable relationship
-                with eating.
-              </p>
+        <p>
+          Nutrition counseling can help reduce stress around food and support a
+          more flexible, confident, and sustainable relationship with eating.
+        </p>
 
-              <p>
-                My approach is practical, evidence-based, and collaborative—not
-                overwhelming.
-              </p>
+        <p>
+          My approach is practical, evidence-based, and collaborative—not
+          overwhelming.
+        </p>
 
-              <p className="font-medium text-[#34414E]">
-                Together, we&apos;ll work to define what healthy looks like—for
-                you.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <p className="font-medium text-[#34414E]">
+          Together, we&apos;ll work to define what healthy looks like—for you.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Services */}
       <section className="border-b border-[#E4EBF0] px-6 py-14 md:py-16">
