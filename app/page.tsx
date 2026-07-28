@@ -22,22 +22,21 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
       {/* Hero */}
-      <section className="border-b border-[#E4EBF0] px-6 py-12 md:py-16">
+      <section className="border-b border-[#E4EBF0] px-6 py-10 sm:py-12 md:py-16">
         <div className="mx-auto max-w-5xl">
           <div className="max-w-4xl">
-            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-              Eating Disorder Nutrition Counseling
-            </p>
+            <p className="text-[0.68rem] font-medium uppercase leading-5 tracking-[0.24em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
+  Eating Disorder Nutrition Counseling
+</p>
 
-            <h1 className="font-heading mt-6 max-w-3xl text-3xl font-normal leading-[1.1] tracking-[-0.035em] sm:text-4xl md:text-[3rem]">
-              What does healthy mean to you?
-            </h1>
+          <h1 className="font-heading mt-5 max-w-3xl text-[2.35rem] font-normal leading-[1.08] tracking-[-0.035em] sm:text-4xl md:text-[3rem]">
+  What does healthy mean to you?
+</h1>
 
-            <div className="mt-7 max-w-3xl space-y-4 text-[1.05rem] leading-8 text-[#687785]">
-              <p>Healthy means something different for everyone.</p>
+            <div className="mt-6 max-w-3xl space-y-4 text-base leading-7 text-[#687785] sm:text-[1.05rem] sm:leading-8"
 
               <p>
-                Health often becomes defined by the number on the scale,
+                Healthy often becomes defined by the number on the scale,
                 yesterday&apos;s workout, or the foods we believe we should or
                 shouldn&apos;t eat.
               </p>
@@ -45,7 +44,7 @@ export default function Home() {
               <p>
                 Nutrition counseling can help reduce stress around food and
                 support a more flexible, confident, and sustainable relationship
-                with eating.
+                with food and your body. 
               </p>
 
               <p>
