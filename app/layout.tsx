@@ -28,7 +28,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/groups", label: "Groups" },
 ];
 
 export default function RootLayout({
@@ -66,20 +65,20 @@ export default function RootLayout({
 
               <Link
                 href="/contact"
-                className="rounded-md bg-[#829CB1] px-5 py-2.5 text-white transition-colors hover:bg-[#708A9F]"
+                className="text-[#718CA2] transition-colors hover:text-[#526D83]"
               >
                 Contact
               </Link>
             </nav>
 
             <details className="relative md:hidden">
-              <summary className="cursor-pointer list-none border border-[#D3DEE6] px-4 py-2 text-sm text-[#34414E]">
+              <summary className="cursor-pointer list-none text-sm text-[#34414E]">
                 Menu
               </summary>
 
               <nav
                 aria-label="Mobile navigation"
-                className="absolute right-0 top-12 w-56 border border-[#E4EBF0] bg-white p-3 shadow-lg"
+                className="absolute right-0 top-10 w-52 border border-[#E4EBF0] bg-white p-3 shadow-lg"
               >
                 <div className="flex flex-col">
                   {navLinks.map((link) => (
@@ -94,7 +93,7 @@ export default function RootLayout({
 
                   <Link
                     href="/contact"
-                    className="mt-2 bg-[#829CB1] px-4 py-3 text-center text-sm text-white"
+                    className="px-4 py-3 text-sm text-[#718CA2] hover:bg-[#F7FAFC] hover:text-[#526D83]"
                   >
                     Contact
                   </Link>
@@ -117,6 +116,28 @@ export default function RootLayout({
                 Eating disorder and nutrition counseling for adolescents,
                 adults, and families.
               </p>
+
+              <nav
+                aria-label="Footer navigation"
+                className="mt-5 flex flex-wrap gap-x-5 gap-y-3"
+              >
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="transition-colors hover:text-[#526D83]"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+
+                <Link
+                  href="/contact"
+                  className="transition-colors hover:text-[#526D83]"
+                >
+                  Contact
+                </Link>
+              </nav>
             </div>
 
             <p>© {new Date().getFullYear()} Justine Roth Nutrition</p>
