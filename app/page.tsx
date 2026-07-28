@@ -36,7 +36,7 @@ export default function Home() {
             <p>Healthy means something different for everyone.</p>
 
             <p>
-              Too often, health becomes defined by the number on the scale,
+              Health often becomes defined by the number on the scale,
               yesterday&apos;s workout, or the foods we believe we should or
               shouldn&apos;t eat.
             </p>
@@ -179,7 +179,7 @@ export default function Home() {
               Get Started
             </p>
 
-            <section className="border-b border-[#E4EBF0] bg-[#F7FAFC] px-6 py-10">
+            <h2 className="mt-3 text-3xl font-normal tracking-[-0.035em]">
               Ready to take the next step?
             </h2>
           </div>
