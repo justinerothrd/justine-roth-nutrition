@@ -90,9 +90,10 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="bg-[#EAF1F5] px-6 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="sm:flex sm:items-end sm:justify-between sm:gap-10">
+      <section className="border-b border-[#E4EBF0] bg-white">
+        {/* Blue heading band */}
+        <div className="bg-[#EAF1F5] px-6 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-12">
+          <div className="mx-auto max-w-6xl sm:flex sm:items-end sm:justify-between sm:gap-10">
             <div>
               <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#718CA2] sm:text-xs sm:tracking-[0.26em]">
                 How I Can Help
@@ -111,12 +112,15 @@ export default function Home() {
               <span aria-hidden="true">→</span>
             </Link>
           </div>
+        </div>
 
-          <div className="mt-8 border-t border-[#CFDCE5] sm:mt-10 md:grid md:grid-cols-3">
+        {/* Service list */}
+        <div className="px-6 sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-6xl md:grid md:grid-cols-3">
             {services.map((service, index) => (
               <article
                 key={service.title}
-                className={`border-b border-[#CFDCE5] py-7 md:min-h-[240px] md:border-b-0 md:px-8 md:py-8 ${
+                className={`border-b border-[#E4EBF0] py-8 md:min-h-[240px] md:border-b-0 md:px-8 md:py-10 ${
                   index === 0 ? "md:pl-0" : "md:border-l"
                 } ${index === services.length - 1 ? "md:pr-0" : ""}`}
               >
@@ -124,7 +128,7 @@ export default function Home() {
                   {service.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-7 text-[#5F7180] sm:text-[0.95rem]">
+                <p className="mt-4 text-sm leading-7 text-[#687785] sm:text-[0.95rem]">
                   {service.description}
                 </p>
               </article>
