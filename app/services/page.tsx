@@ -69,7 +69,7 @@ export default function ServicesPage() {
         className="hidden h-full w-px bg-gradient-to-b from-transparent via-[#D7E4EC] to-transparent lg:block"
       />
 
-      <div className="mt-7 max-w-4xl text-lg leading-8 text-[#687785]">
+      <div className="max-w-lg text-[1.05rem] leading-8 text-[#687785]">
         <p>
           Every client arrives with a different story. Services are
           individualized and designed to provide practical, evidence-based
@@ -79,7 +79,6 @@ export default function ServicesPage() {
     </div>
   </div>
 </section>
-     
 
       {/* Services */}
       <section className="border-b border-[#E4EBF0] bg-white">
@@ -100,7 +99,7 @@ export default function ServicesPage() {
             {services.map((service, index) => (
               <article
                 key={service.title}
-                className={`grid gap-4 py-8 sm:py-9 md:grid-cols-[1fr_1fr] md:gap-14 ${
+                className={`grid gap-4 py-10 sm:py-9 md:grid-cols-[1fr_1fr] md:gap-14 ${
                   index < services.length - 1
                     ? "border-b border-[#E4EBF0]"
                     : ""
