@@ -13,20 +13,19 @@ export default function ContactPage() {
           </h1>
 
           <p className="mt-6 text-base leading-7 text-[#687785]">
-            In-person appointments in New York City and virtual appointments
-            are available.
+            In-person appointments in New York City as well as virtual meetings are available.
           </p>
         </div>
       </section>
 
       {/* Tablet and desktop introduction */}
-      <section className="hidden border-b border-[#E4EBF0] px-8 py-14 sm:block lg:px-10 lg:py-16">
+      <section className="hidden border-b border-[#E4EBF0] px-8 py-12 sm:block lg:px-10 lg:py-14">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
             Contact
           </p>
 
-          <div className="mt-6 grid gap-12 lg:grid-cols-[1.15fr_auto_0.85fr] xl:gap-14">
+          <div className="mt-6 grid items-center gap-8 lg:grid-cols-[0.9fr_auto_1.1fr] lg:gap-10">
             <div>
               <h1 className="font-heading text-[2.75rem] font-normal leading-[1.04] tracking-[-0.04em] md:text-[3.15rem] lg:text-[3.6rem]">
                 Get in touch.
@@ -38,16 +37,12 @@ export default function ContactPage() {
               className="hidden h-full w-px bg-gradient-to-b from-transparent via-[#D7E4EC] to-transparent lg:block"
             />
 
-            <div className="max-w-lg text-[1.05rem] leading-8 text-[#687785]">
+            <div className="max-w-xl text-[1.05rem] leading-8 text-[#687785]">
               <p>
-                In-person appointments in New York City and virtual
-                appointments are available.
+                In-person appointments in New York City as well as virtual
+                meetings are available.
               </p>
 
-              <p className="mt-4">
-                Complete the form below to ask a question or discuss scheduling
-                a consultation.
-              </p>
             </div>
           </div>
         </div>
@@ -82,11 +77,7 @@ export default function ContactPage() {
                 together may be a good fit.
               </p>
 
-              <p className="mt-5 text-sm leading-6 text-[#7A8791]">
-                Please do not include private medical information in this
-                initial message.
-              </p>
-            </aside>
+           
 
             <form className="space-y-8">
               <div>
