@@ -51,35 +51,35 @@ export default function ServicesPage() {
       </section>
 
       {/* Tablet and desktop introduction */}
-      <section className="hidden border-b border-[#E4EBF0] px-8 py-14 sm:block lg:px-10 lg:py-16">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-            Services
-          </p>
+<section className="hidden border-b border-[#E4EBF0] px-8 py-14 sm:block lg:px-10 lg:py-16">
+  <div className="mx-auto max-w-7xl">
+    <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+      Services
+    </p>
 
-          <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-10 xl:gap-12">
-            <div>
-              <h1 className="font-heading max-w-[14ch] text-[2.75rem] font-normal leading-[1.04] tracking-[-0.04em] md:text-[3.15rem] lg:text-[3.6rem]">
-                Nutrition care that meets you where you are.
-              </h1>
-            </div>
+    <div className="mt-6 grid gap-12 lg:grid-cols-[1.15fr_auto_0.85fr] xl:gap-14">
+      <div>
+        <h1 className="font-heading max-w-[16ch] text-[2.75rem] font-normal leading-[1.04] tracking-[-0.04em] md:text-[3.15rem] lg:text-[3.6rem]">
+          Nutrition care that meets you where you are.
+        </h1>
+      </div>
 
-            <div
-              aria-hidden="true"
-              className="hidden h-full w-px bg-gradient-to-b from-transparent via-[#D7E4EC] to-transparent lg:block"
-            />
+      <div
+        aria-hidden="true"
+        className="hidden h-full w-px bg-gradient-to-b from-transparent via-[#D7E4EC] to-transparent lg:block"
+      />
 
-            <div className="max-w-lg text-[1.05rem] leading-8 text-[#687785]">
-              <p>
-                Every client arrives with a different story. Services are
-                individualized and designed to provide practical,
-                evidence-based nutrition care that feels collaborative—not
-                overwhelming.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="max-w-lg text-[1.05rem] leading-8 text-[#687785]">
+        <p>
+          Every client arrives with a different story. Services are
+          individualized and designed to provide practical, evidence-based
+          nutrition care that feels collaborative—not overwhelming.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+     
 
       {/* Services */}
       <section className="border-b border-[#E4EBF0] bg-white">
