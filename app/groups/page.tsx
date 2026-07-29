@@ -26,87 +26,206 @@ const groupSchedule = [
 
 export default function GroupsPage() {
   return (
-    <main className="min-h-screen bg-[#F8F5F0] text-[#2F332F]">
-      {/* Hero */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-5xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-[#536857]">
+    <main className="min-h-screen bg-white text-[#34414E]">
+      {/* Mobile introduction */}
+      <section className="border-b border-[#E4EBF0] px-6 py-10 sm:hidden">
+        <div className="mx-auto max-w-md">
+          <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1]">
             Current Groups
           </p>
 
-          <h1 className="max-w-4xl text-4xl font-light leading-tight sm:text-5xl md:text-6xl">
-            Yoga & Meal Support 
+          <h1 className="font-heading mt-4 max-w-[13ch] text-[2.15rem] font-normal leading-[1.06] tracking-[-0.04em]">
+            Yoga, meal support, and mindfulness.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5F665F]">
-            Explore current meal support, mindfulness, and yoga
-            groups designed to support recovery and overall well-being.
+          <p className="mt-6 text-base leading-7 text-[#687785]">
+            Explore current groups designed to support recovery, connection,
+            and overall well-being.
           </p>
         </div>
       </section>
 
-      {/* Schedule */}
-      <section className="bg-[#FFFDF8] px-6 py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-10">
-            <h2 className="text-3xl font-light sm:text-4xl">
-              Current Group Schedule
-            </h2>
+      {/* Tablet and desktop introduction */}
+      <section className="hidden border-b border-[#E4EBF0] px-8 py-12 sm:block lg:px-10 lg:py-14">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+            Current Groups
+          </p>
 
-            <p className="mt-4 max-w-2xl leading-7 text-[#5F665F]">
-              Groups are offered throughout the year. Please contact us for
-              registration information and current availability.
+          <div className="mt-6 grid items-center gap-8 lg:grid-cols-[1.05fr_auto_0.95fr] lg:gap-10 xl:gap-12">
+            <div>
+              <h1 className="font-heading max-w-[15ch] text-[2.75rem] font-normal leading-[1.04] tracking-[-0.04em] md:text-[3.15rem] lg:text-[3.6rem]">
+                Yoga, meal support, and mindfulness.
+              </h1>
+            </div>
+
+            <div
+              aria-hidden="true"
+              className="hidden h-full w-px bg-gradient-to-b from-transparent via-[#D7E4EC] to-transparent lg:block"
+            />
+
+            <div className="max-w-xl text-[1.05rem] leading-8 text-[#687785]">
+              <p>
+                Explore current groups designed to support recovery,
+                connection, and overall well-being.
+              </p>
+
+              <p className="mt-4">
+                Offerings may include meal support, yoga, mindfulness, mindful
+                eating, and movement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Schedule */}
+      <section className="border-b border-[#E4EBF0] bg-white">
+        {/* Blue heading band */}
+        <div className="bg-[#EAF1F5] px-6 py-8 sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+          <div className="mx-auto max-w-6xl sm:flex sm:items-end sm:justify-between sm:gap-10">
+            <div>
+              <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#718CA2] sm:text-xs sm:tracking-[0.26em]">
+                Schedule
+              </p>
+
+              <h2 className="font-heading mt-3 text-[1.8rem] font-normal leading-[1.08] tracking-[-0.03em] sm:text-3xl">
+                Current group offerings
+              </h2>
+            </div>
+
+            <p className="mt-5 max-w-md text-sm leading-6 text-[#607586] sm:mt-0 sm:text-right">
+              Contact Justine for registration information and current
+              availability.
             </p>
           </div>
+        </div>
 
-          {/* Table Header */}
-          <div className="hidden rounded-t-3xl bg-[#536857] px-6 py-4 text-sm font-medium uppercase tracking-wide text-white md:grid md:grid-cols-[1fr_1fr_2fr_1fr_1fr]">
-            <p>Day</p>
-            <p>Time</p>
-            <p>Group</p>
-            <p>Instructor</p>
-            <p>Location</p>
-          </div>
-
-          {/* Schedule */}
-          <div className="overflow-hidden rounded-b-3xl border border-[#E8E1D8]">
+        {/* Mobile schedule */}
+        <div className="px-6 sm:hidden">
+          <div className="mx-auto max-w-md">
             {groupSchedule.map((item) => (
-              <div
+              <article
                 key={`${item.day}-${item.time}-${item.className}`}
-                className="grid gap-2 border-b border-[#E8E1D8] bg-[#F8F5F0] p-6 last:border-b-0 md:grid-cols-[1fr_1fr_2fr_1fr_1fr] md:items-center"
+                className="border-b border-[#E4EBF0] py-8"
               >
-                <p className="font-medium">{item.day}</p>
+                <div className="flex items-start justify-between gap-6">
+                  <div>
+                    <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[#829CB1]">
+                      {item.day}
+                    </p>
 
-                <p className="text-[#5F665F]">{item.time}</p>
+                    <h3 className="font-heading mt-3 text-[1.45rem] font-normal leading-tight tracking-[-0.025em]">
+                      {item.className}
+                    </h3>
+                  </div>
 
-                <p>{item.className}</p>
+                  <p className="shrink-0 text-right text-sm leading-6 text-[#687785]">
+                    {item.time}
+                  </p>
+                </div>
 
-                <p className="text-[#5F665F]">{item.instructor}</p>
+                <div className="mt-5 grid grid-cols-2 gap-4 text-sm leading-6">
+                  <div>
+                    <p className="text-[#8A98A3]">Instructor</p>
+                    <p className="mt-1 text-[#34414E]">{item.instructor}</p>
+                  </div>
 
-                <p className="text-[#5F665F]">{item.location}</p>
-              </div>
+                  <div>
+                    <p className="text-[#8A98A3]">Location</p>
+                    <p className="mt-1 text-[#34414E]">{item.location}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* Tablet and desktop schedule */}
+        <div className="hidden px-8 sm:block lg:px-10">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid grid-cols-[0.75fr_1fr_1.8fr_0.9fr_0.9fr] gap-6 border-b border-[#DCE6ED] py-5 text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[#829CB1]">
+              <p>Day</p>
+              <p>Time</p>
+              <p>Group</p>
+              <p>Instructor</p>
+              <p>Location</p>
+            </div>
+
+            {groupSchedule.map((item) => (
+              <article
+                key={`${item.day}-${item.time}-${item.className}`}
+                className="grid grid-cols-[0.75fr_1fr_1.8fr_0.9fr_0.9fr] items-center gap-6 border-b border-[#E4EBF0] py-8"
+              >
+                <p className="font-medium text-[#34414E]">{item.day}</p>
+
+                <p className="text-[#687785]">{item.time}</p>
+
+                <h3 className="font-heading text-xl font-normal leading-tight tracking-[-0.02em] text-[#34414E]">
+                  {item.className}
+                </h3>
+
+                <p className="text-[#687785]">{item.instructor}</p>
+
+                <p className="text-[#687785]">{item.location}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-4xl rounded-[2rem] bg-[#9BAF9B]/20 px-8 py-14 text-center">
-          <h2 className="text-3xl font-light">
-            Interested in joining a group?
-          </h2>
+      {/* Group information */}
+      <section className="border-b border-[#E4EBF0] bg-white px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-18">
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-14 lg:gap-20">
+          <div>
+            <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
+              Before Joining
+            </p>
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#5F665F]">
-            Contact Justine to learn more about current groups, availability,
-            and the registration process.
-          </p>
+            <h2 className="font-heading mt-4 max-w-[16ch] text-[1.8rem] font-normal leading-[1.1] tracking-[-0.03em] sm:text-3xl lg:text-[2.15rem]">
+              Find the group that feels right for you.
+            </h2>
+          </div>
+
+          <div className="space-y-5 text-base leading-7 text-[#687785] sm:text-lg sm:leading-8">
+            <p>
+              Group availability may change throughout the year. Some groups
+              are offered virtually, while others meet in person.
+            </p>
+
+            <p>
+              Please reach out before attending to confirm availability,
+              registration details, and whether the group is an appropriate
+              fit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="border-b border-[#DCE6ED] bg-[#F6F9FB] px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
+        <div className="mx-auto flex max-w-6xl flex-col gap-7 md:flex-row md:items-center md:justify-between md:gap-16">
+          <div className="max-w-2xl">
+            <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
+              Get Started
+            </p>
+
+            <h2 className="font-heading mt-3 text-[1.8rem] font-normal leading-[1.1] tracking-[-0.03em] sm:text-3xl">
+              Interested in joining a group?
+            </h2>
+
+            <p className="mt-4 text-base leading-7 text-[#687785] sm:text-lg sm:leading-8">
+              Reach out to learn more about current offerings, availability,
+              and the registration process.
+            </p>
+          </div>
 
           <Link
             href="/contact"
-            className="mt-8 inline-block rounded-full bg-[#536857] px-8 py-4 text-white transition hover:bg-[#435646]"
+            className="inline-flex w-fit shrink-0 items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
           >
             Contact Justine
+            <span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>
