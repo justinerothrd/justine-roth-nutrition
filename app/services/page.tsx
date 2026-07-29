@@ -69,7 +69,7 @@ export default function ServicesPage() {
         className="hidden h-full w-px bg-gradient-to-b from-transparent via-[#D7E4EC] to-transparent lg:block"
       />
 
-      <div className="max-w-lg text-[1.05rem] leading-8 text-[#687785]">
+      <div className="mt-7 max-w-4xl text-lg leading-8 text-[#687785]">
         <p>
           Every client arrives with a different story. Services are
           individualized and designed to provide practical, evidence-based
