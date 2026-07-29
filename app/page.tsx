@@ -48,9 +48,9 @@ export default function Home() {
             Eating Disorder Nutrition Counseling
           </p>
 
-          <div className="mt-6 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-20">
+          <div className="mt-6 grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 xl:gap-20">
             <div>
-              <h1 className="font-heading max-w-[11ch] text-[2.75rem] font-normal leading-[1.06] tracking-[-0.04em] md:text-[3.15rem] lg:text-[3.6rem]">
+              <h1 className="font-heading max-w-[13ch] text-[2.75rem] font-normal leading-[1.02] tracking-[-0.045em] md:text-[3.4rem] lg:text-[4rem]"
                 What does healthy mean to you?
               </h1>
             </div>
