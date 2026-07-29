@@ -42,20 +42,25 @@ export default function Home() {
       </section>
 
       {/* Tablet and desktop hero */}
-      <section className="hidden border-b border-[#E4EBF0] px-8 py-14 sm:block lg:px-10 lg:py-20">
+      <section className="hidden border-b border-[#E4EBF0] px-8 py-14 sm:block lg:px-10 lg:py-16">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
             Eating Disorder Nutrition Counseling
           </p>
 
-          <div className="mt-6 grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16 xl:gap-20">
+          <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-10 xl:gap-12">
             <div>
               <h1 className="font-heading max-w-[13ch] text-[2.75rem] font-normal leading-[1.04] tracking-[-0.04em] md:text-[3.15rem] lg:text-[3.6rem]">
                 What does healthy mean to you?
               </h1>
             </div>
 
-            <div className="max-w-xl space-y-4 text-[1.05rem] leading-8 text-[#687785]">
+            <div
+              aria-hidden="true"
+              className="hidden h-full w-px bg-gradient-to-b from-transparent via-[#D7E4EC] to-transparent lg:block"
+            />
+
+            <div className="max-w-lg space-y-4 text-[1.05rem] leading-8 text-[#687785]">
               <p>Healthy means something different for everyone.</p>
 
               <p>
