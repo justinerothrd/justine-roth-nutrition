@@ -31,18 +31,18 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
-      {/* Introduction */}
-      <section className="border-b border-[#E4EBF0] px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+      {/* Mobile introduction */}
+      <section className="border-b border-[#E4EBF0] px-6 py-10 sm:hidden">
+        <div className="mx-auto max-w-md">
+          <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1]">
             Services
           </p>
 
-          <h1 className="font-heading mt-6 max-w-3xl text-3xl font-normal leading-[1.1] tracking-[-0.035em] sm:text-4xl md:text-[3rem]">
+          <h1 className="font-heading mt-4 max-w-[14ch] text-[2.15rem] font-normal leading-[1.06] tracking-[-0.04em]">
             Nutrition care that meets you where you are.
           </h1>
 
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-[#687785]">
+          <p className="mt-6 text-base leading-7 text-[#687785]">
             Every client arrives with a different story. Services are
             individualized and designed to provide practical, evidence-based
             nutrition care that feels collaborative—not overwhelming.
@@ -50,24 +50,67 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services */}
-      <section className="border-b border-[#E4EBF0] px-6 py-14 md:py-16">
-        <div className="mx-auto max-w-5xl">
+      {/* Tablet and desktop introduction */}
+      <section className="hidden border-b border-[#E4EBF0] px-8 py-14 sm:block lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-7xl">
           <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-            How We Can Work Together
+            Services
           </p>
 
-          <div className="mt-8 border-t border-[#E4EBF0]">
-            {services.map((service) => (
+          <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-10 xl:gap-12">
+            <div>
+              <h1 className="font-heading max-w-[14ch] text-[2.75rem] font-normal leading-[1.04] tracking-[-0.04em] md:text-[3.15rem] lg:text-[3.6rem]">
+                Nutrition care that meets you where you are.
+              </h1>
+            </div>
+
+            <div
+              aria-hidden="true"
+              className="hidden h-full w-px bg-gradient-to-b from-transparent via-[#D7E4EC] to-transparent lg:block"
+            />
+
+            <div className="max-w-lg text-[1.05rem] leading-8 text-[#687785]">
+              <p>
+                Every client arrives with a different story. Services are
+                individualized and designed to provide practical,
+                evidence-based nutrition care that feels collaborative—not
+                overwhelming.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="border-b border-[#E4EBF0] bg-white">
+        <div className="bg-[#EAF1F5] px-6 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-12">
+          <div className="mx-auto max-w-6xl">
+            <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#718CA2] sm:text-xs sm:tracking-[0.26em]">
+              How We Can Work Together
+            </p>
+
+            <h2 className="font-heading mt-3 max-w-2xl text-[1.8rem] font-normal leading-[1.08] tracking-[-0.03em] sm:text-3xl">
+              Individualized support for different needs and stages of care.
+            </h2>
+          </div>
+        </div>
+
+        <div className="px-6 sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-6xl">
+            {services.map((service, index) => (
               <article
                 key={service.title}
-                className="grid gap-4 border-b border-[#E4EBF0] py-8 md:grid-cols-[0.85fr_1.15fr] md:gap-14"
+                className={`grid gap-4 py-8 sm:py-9 md:grid-cols-[0.85fr_1.15fr] md:gap-14 ${
+                  index < services.length - 1
+                    ? "border-b border-[#E4EBF0]"
+                    : ""
+                }`}
               >
-                <h2 className="font-heading text-2xl font-normal leading-tight tracking-[-0.025em]">
+                <h3 className="font-heading max-w-[18ch] text-[1.45rem] font-normal leading-tight tracking-[-0.025em] sm:text-2xl">
                   {service.title}
-                </h2>
+                </h3>
 
-                <p className="max-w-xl leading-7 text-[#687785]">
+                <p className="max-w-xl text-base leading-7 text-[#687785]">
                   {service.description}
                 </p>
               </article>
@@ -77,19 +120,19 @@ export default function ServicesPage() {
       </section>
 
       {/* Approach */}
-      <section className="border-b border-[#DCE6ED] bg-[#F3F7FA] px-6 py-14 md:py-16">
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.75fr_1.25fr] md:gap-14">
+      <section className="border-b border-[#DCE6ED] bg-[#F3F7FA] px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-14 lg:gap-20">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+            <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
               My Approach
             </p>
 
-            <h2 className="font-heading mt-4 text-3xl font-normal leading-tight tracking-[-0.03em]">
+            <h2 className="font-heading mt-4 max-w-[17ch] text-[1.8rem] font-normal leading-[1.1] tracking-[-0.03em] sm:text-3xl lg:text-[2.15rem]">
               Nutrition care should feel supportive, not rigid.
             </h2>
           </div>
 
-          <div className="space-y-5 text-lg leading-8 text-[#687785]">
+          <div className="space-y-5 text-base leading-7 text-[#687785] sm:text-lg sm:leading-8">
             <p>
               Treatment is collaborative, individualized, and grounded in
               current evidence.
@@ -105,20 +148,20 @@ export default function ServicesPage() {
       </section>
 
       {/* Groups */}
-      <section className="border-b border-[#E4EBF0] px-6 py-14 md:py-16">
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.75fr_1.25fr] md:gap-14">
+      <section className="border-b border-[#E4EBF0] bg-white px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-14 lg:gap-20">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+            <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
               Group Programs
             </p>
 
-            <h2 className="font-heading mt-4 text-3xl font-normal leading-tight tracking-[-0.03em]">
+            <h2 className="font-heading mt-4 text-[1.8rem] font-normal leading-[1.1] tracking-[-0.03em] sm:text-3xl lg:text-[2.15rem]">
               Current group offerings
             </h2>
           </div>
 
           <div>
-            <p className="text-lg leading-8 text-[#687785]">
+            <p className="text-base leading-7 text-[#687785] sm:text-lg sm:leading-8">
               Group programs may include yoga, breakfast meal support,
               mindfulness, mindful eating, and movement. Offerings and
               availability may change throughout the year.
@@ -136,18 +179,18 @@ export default function ServicesPage() {
       </section>
 
       {/* Contact */}
-      <section className="border-b border-[#DCE6ED] bg-[#F3F7FA] px-6 py-14 md:py-16">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
+      <section className="border-b border-[#DCE6ED] bg-[#F6F9FB] px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
+        <div className="mx-auto flex max-w-6xl flex-col gap-7 md:flex-row md:items-center md:justify-between md:gap-16">
           <div className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+            <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
               Get Started
             </p>
 
-            <h2 className="font-heading mt-3 text-3xl font-normal leading-tight tracking-[-0.03em]">
+            <h2 className="font-heading mt-3 text-[1.8rem] font-normal leading-[1.1] tracking-[-0.03em] sm:text-3xl">
               Not sure which service is the right fit?
             </h2>
 
-            <p className="mt-4 text-lg leading-8 text-[#687785]">
+            <p className="mt-4 text-base leading-7 text-[#687785] sm:text-lg sm:leading-8">
               Reach out with questions or to discuss what type of support may
               be most appropriate.
             </p>
