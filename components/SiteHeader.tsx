@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/what-to-expect", label: "Working Together" },
-  { href: "/groups", label: "Groups" },
 ];
 
 export default function SiteHeader() {
