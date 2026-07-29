@@ -82,16 +82,16 @@ export default function GroupsPage() {
       {/* Schedule */}
       <section className="border-b border-[#E4EBF0] bg-white">
         {/* Blue heading band */}
-        <div className="bg-[#EAF1F5] px-6 py-8 sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+        <div className="bg-[#EAF1F5] px-6 py-6 sm:px-8 sm:py-7 lg:px-10 lg:py-8">
           <div className="mx-auto max-w-6xl sm:flex sm:items-end sm:justify-between sm:gap-10">
             <div>
               <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#718CA2] sm:text-xs sm:tracking-[0.26em]">
                 Schedule
               </p>
 
-              <h2 className="font-heading mt-3 text-[1.8rem] font-normal leading-[1.08] tracking-[-0.03em] sm:text-3xl">
-                Current group offerings
-              </h2>
+             <h2 className="font-heading mt-2 text-[1.65rem] font-normal leading-[1.08] tracking-[-0.03em] sm:text-[2rem]">
+  Current group offerings
+</h2>
             </div>
 
         
