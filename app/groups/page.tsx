@@ -94,10 +94,10 @@ export default function GroupsPage() {
               </h2>
             </div>
 
-            <p className="mt-5 max-w-md text-sm leading-6 text-[#607586] sm:mt-0 sm:text-right">
-              Contact Justine for registration information and current
-              availability.
-            </p>
+            <p className="mt-6 max-w-md text-base leading-7 text-[#607586] sm:mt-0 sm:text-right sm:text-lg sm:leading-8">
+  Contact Justine for registration information and current
+  availability.
+</p>
           </div>
         </div>
 
