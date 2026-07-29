@@ -84,7 +84,7 @@ export default function ServicesPage() {
       {/* Services */}
       <section className="border-b border-[#E4EBF0] bg-white">
         <div className="bg-[#EAF1F5] px-6 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-12">
-          <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-7xl">
             <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#718CA2] sm:text-xs sm:tracking-[0.26em]">
               How We Can Work Together
             </p>
