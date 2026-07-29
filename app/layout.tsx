@@ -18,7 +18,7 @@ const instrument = Instrument_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Justine Roth, MS, RD, CEDS-S",
+    default: "Justine Roth, MS, RD, CEDS-C",
     template: "%s | Justine Roth Nutrition",
   },
   description:
@@ -29,6 +29,8 @@ const footerLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/what-to-expect", label: "Working Together" },
+  { href: "/groups", label: "Groups" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -46,7 +48,7 @@ export default function RootLayout({
 
         {children}
 
-        <footer className="border-t border-[#E4EBF0] bg-white px-6 py-10">
+        <footer className="border-t border-[#E4EBF0] bg-white px-6 py-10 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col gap-6 text-sm text-[#687785]">
               <div>
