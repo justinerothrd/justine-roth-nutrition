@@ -100,7 +100,7 @@ export default function ServicesPage() {
             {services.map((service, index) => (
               <article
                 key={service.title}
-                className={`grid gap-4 py-8 sm:py-9 md:grid-cols-[0.85fr_1.15fr] md:gap-14 ${
+                className={`grid gap-4 py-8 sm:py-9 md:grid-cols-[1fr_1fr] md:gap-14 ${
                   index < services.length - 1
                     ? "border-b border-[#E4EBF0]"
                     : ""
