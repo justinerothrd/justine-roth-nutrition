@@ -71,7 +71,7 @@ export default function GroupsPage() {
               </p>
 
               <p className="mt-4">
-                Offerings may include meal support, yoga, mindfulness, mindful
+               Groups include meal support, yoga, mindfulness, mindful
                 eating, and movement.
               </p>
             </div>
