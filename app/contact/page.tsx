@@ -13,7 +13,8 @@ export default function ContactPage() {
           </h1>
 
           <p className="mt-6 text-base leading-7 text-[#687785]">
-            In-person appointments in New York City as well as virtual meetings are available.
+            In-person appointments in New York City as well as virtual meetings
+            are available.
           </p>
         </div>
       </section>
@@ -42,7 +43,6 @@ export default function ContactPage() {
                 In-person appointments in New York City as well as virtual
                 meetings are available.
               </p>
-
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function ContactPage() {
       {/* Contact form */}
       <section className="border-b border-[#E4EBF0] bg-white">
         {/* Blue heading band */}
-        <div className="bg-[#EAF1F5] px-6 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-12">
+        <div className="bg-[#EAF1F5] px-6 py-7 sm:px-8 sm:py-8 lg:px-10 lg:py-9">
           <div className="mx-auto max-w-6xl">
             <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#718CA2] sm:text-xs sm:tracking-[0.26em]">
               Send a Message
@@ -64,8 +64,8 @@ export default function ContactPage() {
         </div>
 
         {/* Form area */}
-        <div className="px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
-          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+        <div className="px-6 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+          <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
             <aside className="max-w-sm">
               <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
                 What Happens Next
@@ -76,8 +76,7 @@ export default function ContactPage() {
                 about your needs, answer questions, and discuss whether working
                 together may be a good fit.
               </p>
-
-           
+            </aside>
 
             <form className="space-y-8">
               <div>
