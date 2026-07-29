@@ -22,36 +22,40 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
       {/* Mobile hero */}
-      <section className="border-b border-[#E4EBF0] px-6 py-9 sm:hidden">
-        <h1 className="font-heading max-w-[12ch] text-[2.15rem] font-normal leading-[1.06] tracking-[-0.04em]">
-          What does healthy mean to you?
-        </h1>
+      <section className="border-b border-[#E4EBF0] px-6 py-10 sm:hidden">
+        <div className="mx-auto max-w-md">
+          <h1 className="font-heading max-w-[12ch] text-[2.15rem] font-normal leading-[1.06] tracking-[-0.04em]">
+            What does healthy mean to you?
+          </h1>
 
-        <p className="mt-6 text-base leading-7 text-[#687785]">
-          Healthy means something different for everyone. Nutrition counseling
-          can help reduce stress around food and support a more flexible,
-          confident, and sustainable relationship with eating.
-        </p>
+          <p className="mt-6 text-base leading-7 text-[#687785]">
+            Healthy means something different for everyone. Nutrition
+            counseling can help reduce stress around food and support a more
+            flexible, confident, and sustainable relationship with eating.
+          </p>
 
-        <p className="mt-5 text-base font-medium leading-7 text-[#34414E]">
-          My approach is practical, evidence-based, and collaborative—not
-          overwhelming.
-        </p>
+          <p className="mt-5 text-base font-medium leading-7 text-[#34414E]">
+            My approach is practical, evidence-based, and collaborative—not
+            overwhelming.
+          </p>
+        </div>
       </section>
 
       {/* Tablet and desktop hero */}
-      <section className="hidden border-b border-[#E4EBF0] px-6 py-12 sm:block md:py-16">
-        <div className="mx-auto max-w-5xl">
-          <div className="max-w-4xl">
-            <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
-              Eating Disorder Nutrition Counseling
-            </p>
+      <section className="hidden border-b border-[#E4EBF0] px-8 py-14 sm:block lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+            Eating Disorder Nutrition Counseling
+          </p>
 
-            <h1 className="font-heading mt-5 max-w-3xl text-4xl font-normal leading-[1.08] tracking-[-0.035em] md:text-[3rem]">
-              What does healthy mean to you?
-            </h1>
+          <div className="mt-6 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-20">
+            <div>
+              <h1 className="font-heading max-w-[11ch] text-[2.75rem] font-normal leading-[1.06] tracking-[-0.04em] md:text-[3.15rem] lg:text-[3.6rem]">
+                What does healthy mean to you?
+              </h1>
+            </div>
 
-            <div className="mt-6 max-w-3xl space-y-4 text-[1.05rem] leading-8 text-[#687785]">
+            <div className="max-w-2xl space-y-4 text-[1.05rem] leading-8 text-[#687785]">
               <p>Healthy means something different for everyone.</p>
 
               <p>
@@ -81,9 +85,9 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="border-b border-[#E4EBF0] px-6 py-10 sm:py-12 md:py-16">
-        <div className="mx-auto max-w-5xl">
-          <div className="sm:flex sm:items-end sm:justify-between">
+      <section className="border-b border-[#E4EBF0] px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="sm:flex sm:items-end sm:justify-between sm:gap-10">
             <div>
               <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
                 How I Can Help
@@ -103,19 +107,19 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-7 border-t border-[#E4EBF0] sm:mt-9 md:grid md:grid-cols-3">
+          <div className="mt-8 border-t border-[#E4EBF0] sm:mt-10 md:grid md:grid-cols-3">
             {services.map((service, index) => (
               <article
                 key={service.title}
-                className={`border-b border-[#E4EBF0] py-6 md:px-7 ${
-                  index > 0 ? "md:border-l" : ""
-                }`}
+                className={`border-b border-[#E4EBF0] py-7 md:min-h-[240px] md:border-b-0 md:px-8 md:py-8 ${
+                  index === 0 ? "md:pl-0" : "md:border-l"
+                } ${index === services.length - 1 ? "md:pr-0" : ""}`}
               >
-                <h3 className="font-heading text-xl font-normal leading-tight tracking-[-0.025em]">
+                <h3 className="font-heading max-w-[15ch] text-xl font-normal leading-tight tracking-[-0.025em] sm:text-[1.35rem]">
                   {service.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-[#687785]">
+                <p className="mt-4 text-sm leading-7 text-[#687785] sm:text-[0.95rem]">
                   {service.description}
                 </p>
               </article>
@@ -125,31 +129,31 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section className="border-b border-[#E4EBF0] px-6 py-10 sm:py-12 md:py-16">
-        <div className="mx-auto max-w-5xl md:grid md:grid-cols-[200px_1fr] md:gap-14">
+      <section className="border-b border-[#E4EBF0] px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-6xl md:grid md:grid-cols-[190px_1fr] md:gap-14 lg:grid-cols-[220px_1fr] lg:gap-20">
           <div>
             <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
               About
             </p>
 
             <div className="mt-4 flex items-end gap-3 md:block">
-              <p className="font-heading text-4xl font-normal tracking-[-0.045em] text-[#7894AA]">
+              <p className="font-heading text-4xl font-normal tracking-[-0.045em] text-[#7894AA] lg:text-[2.75rem]">
                 20+
               </p>
 
-              <p className="pb-1 text-sm leading-6 text-[#687785] md:mt-2 md:pb-0">
+              <p className="max-w-[160px] pb-1 text-sm leading-6 text-[#687785] md:mt-2 md:pb-0">
                 Years of specialized experience
               </p>
             </div>
           </div>
 
-          <div className="mt-7 md:mt-0">
-            <h2 className="font-heading max-w-[18ch] text-[1.75rem] font-normal leading-[1.1] tracking-[-0.03em] sm:max-w-3xl sm:text-3xl">
+          <div className="mt-8 md:mt-0">
+            <h2 className="font-heading max-w-3xl text-[1.75rem] font-normal leading-[1.1] tracking-[-0.03em] sm:text-3xl lg:text-[2.15rem]">
               Experienced nutrition care without judgment or rigid rules.
             </h2>
 
-            <p className="mt-4 max-w-3xl text-base leading-7 text-[#687785] sm:mt-5 sm:text-lg sm:leading-8">
-              Justine Roth, MS, RD, CEDS-S is a registered dietitian
+            <p className="mt-5 max-w-3xl text-base leading-7 text-[#687785] sm:text-lg sm:leading-8">
+              Justine Roth, MS, RD, CEDS-C is a registered dietitian
               specializing in eating disorders, ARFID, and nutrition
               counseling. She works with adolescents, adults, and families
               using a practical, evidence-based, non-diet approach.
@@ -167,8 +171,8 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section className="bg-[#F3F7FA] px-6 py-10 sm:py-12 md:py-16">
-        <div className="mx-auto max-w-5xl md:flex md:items-center md:justify-between md:gap-12">
+      <section className="bg-[#F3F7FA] px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-6xl md:flex md:items-center md:justify-between md:gap-16">
           <div className="max-w-2xl">
             <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
               Get Started
@@ -187,7 +191,7 @@ export default function Home() {
 
           <Link
             href="/contact"
-            className="mt-6 inline-flex w-fit items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83] md:mt-0"
+            className="mt-7 inline-flex w-fit shrink-0 items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83] md:mt-0"
           >
             Schedule a Consultation
             <span aria-hidden="true">→</span>
