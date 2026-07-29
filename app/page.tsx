@@ -134,46 +134,46 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section className="border-b border-[#E4EBF0] px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-6xl md:grid md:grid-cols-[190px_1fr] md:gap-14 lg:grid-cols-[220px_1fr] lg:gap-20">
-          <div>
-            <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
-              About
-            </p>
+<section className="border-b border-[#D7E2E9] bg-[#EAF1F5] px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
+  <div className="mx-auto max-w-6xl md:grid md:grid-cols-[190px_1fr] md:gap-14 lg:grid-cols-[220px_1fr] lg:gap-20">
+    <div>
+      <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#718CA2] sm:text-xs sm:tracking-[0.26em]">
+        About
+      </p>
 
-            <div className="mt-4 flex items-end gap-3 md:block">
-              <p className="font-heading text-4xl font-normal tracking-[-0.045em] text-[#7894AA] lg:text-[2.75rem]">
-                20+
-              </p>
+      <div className="mt-4 flex items-end gap-3 md:block">
+        <p className="font-heading text-4xl font-normal tracking-[-0.045em] text-[#607F96] lg:text-[2.75rem]">
+          20+
+        </p>
 
-              <p className="max-w-[160px] pb-1 text-sm leading-6 text-[#687785] md:mt-2 md:pb-0">
-                Years of specialized experience
-              </p>
-            </div>
-          </div>
+        <p className="max-w-[160px] pb-1 text-sm leading-6 text-[#5F7180] md:mt-2 md:pb-0">
+          Years of specialized experience
+        </p>
+      </div>
+    </div>
 
-          <div className="mt-8 md:mt-0">
-            <h2 className="font-heading max-w-3xl text-[1.75rem] font-normal leading-[1.1] tracking-[-0.03em] sm:text-3xl lg:text-[2.15rem]">
-              Experienced nutrition care without judgment or rigid rules.
-            </h2>
+    <div className="mt-8 md:mt-0">
+      <h2 className="font-heading max-w-3xl text-[1.75rem] font-normal leading-[1.1] tracking-[-0.03em] text-[#34414E] sm:text-3xl lg:text-[2.15rem]">
+        Experienced nutrition care without judgment or rigid rules.
+      </h2>
 
-            <p className="mt-5 max-w-3xl text-base leading-7 text-[#687785] sm:text-lg sm:leading-8">
-              Justine Roth, MS, RD, CEDS-C is a registered dietitian
-              specializing in eating disorders, ARFID, and nutrition
-              counseling. She works with adolescents, adults, and families
-              using a practical, evidence-based, non-diet approach.
-            </p>
+      <p className="mt-5 max-w-3xl text-base leading-7 text-[#5F7180] sm:text-lg sm:leading-8">
+        Justine Roth, MS, RD, CEDS-C is a registered dietitian
+        specializing in eating disorders, ARFID, and nutrition
+        counseling. She works with adolescents, adults, and families
+        using a practical, evidence-based, non-diet approach.
+      </p>
 
-            <Link
-              href="/about"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#718CA2] transition-colors hover:text-[#526D83]"
-            >
-              Read more about Justine
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Link
+        href="/about"
+        className="mt-6 inline-flex items-center gap-2 border-b border-[#829CB1] pb-1 text-sm font-medium text-[#607F96] transition-colors hover:text-[#34414E]"
+      >
+        Read more about Justine
+        <span aria-hidden="true">→</span>
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* Contact */}
       <section className="bg-[#F3F7FA] px-6 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-20">
