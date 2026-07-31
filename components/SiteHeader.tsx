@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -24,10 +25,17 @@ export default function SiteHeader() {
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-6 sm:px-8 lg:px-10">
         <Link
           href="/"
-          className="font-heading text-[1.05rem] font-medium tracking-[-0.025em] text-[#34414E]"
           onClick={() => setMenuOpen(false)}
+          className="flex items-center"
         >
-          Justine Roth Nutrition
+          <Image
+            src="/JR-logo.png"
+            alt="Justine Roth Nutrition"
+            width={500}
+            height={120}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
 
         {/* Desktop */}
@@ -46,7 +54,7 @@ export default function SiteHeader() {
                 href={link.href}
                 className={`transition-colors ${
                   active
-                    ? "text-[#34414E] font-medium"
+                    ? "font-medium text-[#34414E]"
                     : "text-[#687785] hover:text-[#526D83]"
                 }`}
               >
@@ -59,7 +67,7 @@ export default function SiteHeader() {
             href="/contact"
             className={`transition-colors ${
               pathname === "/contact"
-                ? "text-[#34414E] font-medium"
+                ? "font-medium text-[#34414E]"
                 : "text-[#718CA2] hover:text-[#526D83]"
             }`}
           >
