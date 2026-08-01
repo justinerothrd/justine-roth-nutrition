@@ -35,13 +35,26 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#039;");
 }
 
+function formatPreference(value: string) {
+  const labels: Record<string, string> = {
+    "in-person": "In Person",
+    virtual: "Virtual",
+    either: "Either",
+  };
+
+  return labels[value] || "Not selected";
+}
+
 export async function POST(request: Request) {
   try {
     if (!process.env.RESEND_API_KEY) {
       console.error("RESEND_API_KEY is not configured.");
 
       return NextResponse.json(
-        { error: "Email service is not configured." },
+        {
+          error:
+            "The email service is not currently configured. Please email Justine directly.",
+        },
         { status: 500 }
       );
     }
@@ -56,75 +69,314 @@ export async function POST(request: Request) {
       50
     );
     const message = cleanText(body.message, 3000);
-
-    // Hidden honeypot field. Bots often fill this in.
     const website = cleanText(body.website, 200);
 
+    // Honeypot spam field.
     if (website) {
       return NextResponse.json({ success: true });
     }
 
     if (!name || !email || !message) {
       return NextResponse.json(
-        { error: "Name, email, and message are required." },
+        {
+          error: "Please complete your name, email address, and message.",
+        },
         { status: 400 }
       );
     }
 
     if (!isValidEmail(email)) {
       return NextResponse.json(
-        { error: "Please enter a valid email address." },
+        {
+          error: "Please enter a valid email address.",
+        },
         { status: 400 }
       );
     }
 
+    if (message.length < 10) {
+      return NextResponse.json(
+        {
+          error: "Please include a little more information in your message.",
+        },
+        { status: 400 }
+      );
+    }
+
+    const preferenceLabel = formatPreference(appointmentPreference);
+
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safePhone = escapeHtml(phone || "Not provided");
-    const safePreference = escapeHtml(
-      appointmentPreference || "Not selected"
-    );
+    const safePreference = escapeHtml(preferenceLabel);
     const safeMessage = escapeHtml(message).replaceAll("\n", "<br />");
 
+    const submittedAt = new Intl.DateTimeFormat("en-US", {
+      dateStyle: "long",
+      timeStyle: "short",
+      timeZone: "America/New_York",
+    }).format(new Date());
+
+    const fromEmail =
+      process.env.CONTACT_FROM_EMAIL ||
+      "Justine Roth Nutrition <onboarding@resend.dev>";
+
     const { error } = await resend.emails.send({
-      from:
-        process.env.CONTACT_FROM_EMAIL ||
-        "Justine Roth Nutrition <onboarding@resend.dev>",
+      from: fromEmail,
       to: [RECIPIENT_EMAIL],
       replyTo: email,
       subject: `New website inquiry from ${name}`,
       html: `
-        <div style="font-family: Arial, sans-serif; color: #34414E; line-height: 1.6;">
-          <h1 style="font-size: 22px; margin-bottom: 24px;">
-            New Website Inquiry
-          </h1>
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+            <title>New Website Inquiry</title>
+          </head>
 
-          <p><strong>Name:</strong> ${safeName}</p>
-          <p><strong>Email:</strong> ${safeEmail}</p>
-          <p><strong>Phone:</strong> ${safePhone}</p>
-          <p>
-            <strong>Appointment preference:</strong>
-            ${safePreference}
-          </p>
+          <body style="margin:0; padding:0; background:#f6f9fb;">
+            <div style="padding:32px 16px;">
+              <div
+                style="
+                  max-width:640px;
+                  margin:0 auto;
+                  overflow:hidden;
+                  background:#ffffff;
+                  border:1px solid #e4ebf0;
+                  border-radius:16px;
+                "
+              >
+                <div
+                  style="
+                    padding:28px 32px;
+                    background:#eaf1f5;
+                    border-bottom:1px solid #dce6ed;
+                  "
+                >
+                  <p
+                    style="
+                      margin:0 0 8px;
+                      color:#718ca2;
+                      font-family:Arial, sans-serif;
+                      font-size:11px;
+                      font-weight:600;
+                      letter-spacing:2px;
+                      text-transform:uppercase;
+                    "
+                  >
+                    Justine Roth Nutrition
+                  </p>
 
-          <div style="margin-top: 28px;">
-            <p style="margin-bottom: 8px;"><strong>Message:</strong></p>
-            <p style="margin-top: 0;">${safeMessage}</p>
-          </div>
-        </div>
+                  <h1
+                    style="
+                      margin:0;
+                      color:#34414e;
+                      font-family:Arial, sans-serif;
+                      font-size:25px;
+                      font-weight:500;
+                      line-height:1.3;
+                    "
+                  >
+                    New Website Inquiry
+                  </h1>
+                </div>
+
+                <div
+                  style="
+                    padding:30px 32px;
+                    color:#34414e;
+                    font-family:Arial, sans-serif;
+                  "
+                >
+                  <table
+                    role="presentation"
+                    style="
+                      width:100%;
+                      border-collapse:collapse;
+                      font-size:15px;
+                      line-height:1.6;
+                    "
+                  >
+                    <tr>
+                      <td
+                        style="
+                          width:165px;
+                          padding:0 16px 14px 0;
+                          color:#7f8a94;
+                          vertical-align:top;
+                        "
+                      >
+                        Name
+                      </td>
+
+                      <td
+                        style="
+                          padding:0 0 14px;
+                          color:#34414e;
+                          font-weight:600;
+                          vertical-align:top;
+                        "
+                      >
+                        ${safeName}
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        style="
+                          padding:0 16px 14px 0;
+                          color:#7f8a94;
+                          vertical-align:top;
+                        "
+                      >
+                        Email
+                      </td>
+
+                      <td style="padding:0 0 14px; vertical-align:top;">
+                        <a
+                          href="mailto:${safeEmail}"
+                          style="color:#607f96; text-decoration:none;"
+                        >
+                          ${safeEmail}
+                        </a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        style="
+                          padding:0 16px 14px 0;
+                          color:#7f8a94;
+                          vertical-align:top;
+                        "
+                      >
+                        Phone
+                      </td>
+
+                      <td style="padding:0 0 14px; vertical-align:top;">
+                        ${safePhone}
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        style="
+                          padding:0 16px 14px 0;
+                          color:#7f8a94;
+                          vertical-align:top;
+                        "
+                      >
+                        Appointment preference
+                      </td>
+
+                      <td style="padding:0 0 14px; vertical-align:top;">
+                        ${safePreference}
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        style="
+                          padding:0 16px 0 0;
+                          color:#7f8a94;
+                          vertical-align:top;
+                        "
+                      >
+                        Submitted
+                      </td>
+
+                      <td style="padding:0; vertical-align:top;">
+                        ${submittedAt} ET
+                      </td>
+                    </tr>
+                  </table>
+
+                  <div
+                    style="
+                      margin-top:28px;
+                      padding-top:24px;
+                      border-top:1px solid #e4ebf0;
+                    "
+                  >
+                    <p
+                      style="
+                        margin:0 0 10px;
+                        color:#7f8a94;
+                        font-size:13px;
+                        font-weight:600;
+                        letter-spacing:1px;
+                        text-transform:uppercase;
+                      "
+                    >
+                      Message
+                    </p>
+
+                    <div
+                      style="
+                        color:#34414e;
+                        font-size:16px;
+                        line-height:1.75;
+                      "
+                    >
+                      ${safeMessage}
+                    </div>
+                  </div>
+
+                  <div style="margin-top:30px;">
+                    <a
+                      href="mailto:${safeEmail}"
+                      style="
+                        display:inline-block;
+                        padding:12px 20px;
+                        background:#718ca2;
+                        border-radius:999px;
+                        color:#ffffff;
+                        font-size:14px;
+                        font-weight:600;
+                        text-decoration:none;
+                      "
+                    >
+                      Reply to ${safeName}
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    padding:18px 32px;
+                    background:#f8fafb;
+                    border-top:1px solid #e4ebf0;
+                    color:#8a98a3;
+                    font-family:Arial, sans-serif;
+                    font-size:12px;
+                    line-height:1.6;
+                  "
+                >
+                  This message was submitted through the contact form on
+                  Justine Roth Nutrition.
+                </div>
+              </div>
+            </div>
+          </body>
+        </html>
       `,
       text: [
-        "New Website Inquiry",
+        "NEW WEBSITE INQUIRY",
         "",
         `Name: ${name}`,
         `Email: ${email}`,
         `Phone: ${phone || "Not provided"}`,
-        `Appointment preference: ${
-          appointmentPreference || "Not selected"
-        }`,
+        `Appointment preference: ${preferenceLabel}`,
+        `Submitted: ${submittedAt} ET`,
         "",
-        "Message:",
+        "MESSAGE",
         message,
+        "",
+        `Reply directly to: ${email}`,
       ].join("\n"),
     });
 
@@ -132,7 +384,10 @@ export async function POST(request: Request) {
       console.error("Resend error:", error);
 
       return NextResponse.json(
-        { error: "Your message could not be sent. Please try again." },
+        {
+          error:
+            "Your message could not be sent. Please try again or contact Justine directly.",
+        },
         { status: 500 }
       );
     }
@@ -142,7 +397,10 @@ export async function POST(request: Request) {
     console.error("Contact form error:", error);
 
     return NextResponse.json(
-      { error: "Your message could not be sent. Please try again." },
+      {
+        error:
+          "Your message could not be sent. Please try again or contact Justine directly.",
+      },
       { status: 500 }
     );
   }
