@@ -1,3 +1,6 @@
+"use client";
+
+import { FormEvent, useState } from "react";
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
@@ -190,8 +193,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              <button
-                type="submit"
+             <button type="submit">
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-6 text-sm font-medium text-white transition-colors hover:bg-[#607D93]"
               >
                 Send Message
