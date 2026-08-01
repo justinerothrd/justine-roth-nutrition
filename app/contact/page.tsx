@@ -1,7 +1,65 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+
+type FormStatus = "idle" | "sending" | "success" | "error";
+
 export default function ContactPage() {
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    setStatus("sending");
+    setErrorMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const submission = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      appointmentPreference: formData.get("appointmentPreference"),
+      message: formData.get("message"),
+      website: formData.get("website"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submission),
+      });
+
+      const result = (await response.json()) as {
+        success?: boolean;
+        error?: string;
+      };
+
+      if (!response.ok) {
+        throw new Error(
+          result.error ||
+            "Your message could not be sent. Please try again."
+        );
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch (error) {
+      setStatus("error");
+
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Your message could not be sent. Please try again."
+      );
+    }
+  }
+
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
       {/* Mobile introduction */}
@@ -71,17 +129,63 @@ export default function ContactPage() {
           <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
             <aside className="max-w-sm">
               <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
-                What Happens Next
+                Contact Information
               </p>
 
-              <p className="mt-4 text-base leading-7 text-[#687785]">
-                After you submit the form, I&apos;ll follow up to learn more
-                about your needs, answer questions, and discuss whether working
-                together may be a good fit.
-              </p>
+              <div className="mt-5 space-y-4 text-base leading-7">
+                <div>
+                  <p className="text-sm text-[#8A98A3]">Email</p>
+
+                  <a
+                    href="mailto:justinerothrd@gmail.com"
+                    className="mt-1 inline-block text-[#607F96] transition-colors hover:text-[#34414E]"
+                  >
+                    justinerothrd@gmail.com
+                  </a>
+                </div>
+
+                <div>
+                  <p className="text-sm text-[#8A98A3]">Phone</p>
+
+                  <a
+                    href="tel:+19084854995"
+                    className="mt-1 inline-block text-[#607F96] transition-colors hover:text-[#34414E]"
+                  >
+                    (908) 485-4995
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-9 border-t border-[#E4EBF0] pt-7">
+                <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
+                  What Happens Next
+                </p>
+
+                <p className="mt-4 text-base leading-7 text-[#687785]">
+                  After you submit the form, I&apos;ll follow up to learn more
+                  about your needs, answer questions, and discuss whether
+                  working together may be a good fit.
+                </p>
+              </div>
             </aside>
 
-            <form className="space-y-8">
+            <form onSubmit={handleSubmit} className="relative space-y-8">
+              {/* Hidden spam-protection field */}
+              <div
+                aria-hidden="true"
+                className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+              >
+                <label htmlFor="website">Website</label>
+
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               <div>
                 <label
                   htmlFor="name"
@@ -96,7 +200,8 @@ export default function ContactPage() {
                   type="text"
                   autoComplete="name"
                   required
-                  className="w-full border-0 border-b border-[#C5D3DD] bg-transparent px-0 py-3 text-base text-[#34414E] outline-none transition-colors focus:border-[#718CA2]"
+                  disabled={status === "sending"}
+                  className="w-full border-0 border-b border-[#C5D3DD] bg-transparent px-0 py-3 text-base text-[#34414E] outline-none transition-colors focus:border-[#718CA2] disabled:cursor-not-allowed disabled:opacity-60"
                 />
               </div>
 
@@ -114,7 +219,8 @@ export default function ContactPage() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="w-full border-0 border-b border-[#C5D3DD] bg-transparent px-0 py-3 text-base text-[#34414E] outline-none transition-colors focus:border-[#718CA2]"
+                  disabled={status === "sending"}
+                  className="w-full border-0 border-b border-[#C5D3DD] bg-transparent px-0 py-3 text-base text-[#34414E] outline-none transition-colors focus:border-[#718CA2] disabled:cursor-not-allowed disabled:opacity-60"
                 />
               </div>
 
@@ -134,11 +240,12 @@ export default function ContactPage() {
                   name="phone"
                   type="tel"
                   autoComplete="tel"
-                  className="w-full border-0 border-b border-[#C5D3DD] bg-transparent px-0 py-3 text-base text-[#34414E] outline-none transition-colors focus:border-[#718CA2]"
+                  disabled={status === "sending"}
+                  className="w-full border-0 border-b border-[#C5D3DD] bg-transparent px-0 py-3 text-base text-[#34414E] outline-none transition-colors focus:border-[#718CA2] disabled:cursor-not-allowed disabled:opacity-60"
                 />
               </div>
 
-              <fieldset>
+              <fieldset disabled={status === "sending"}>
                 <legend className="mb-4 text-sm font-medium text-[#34414E]">
                   Appointment Preference
                 </legend>
@@ -189,17 +296,47 @@ export default function ContactPage() {
                   name="message"
                   rows={5}
                   required
-                  className="w-full resize-none border-0 border-b border-[#C5D3DD] bg-transparent px-0 py-3 text-base leading-7 text-[#34414E] outline-none transition-colors focus:border-[#718CA2]"
+                  disabled={status === "sending"}
+                  className="w-full resize-none border-0 border-b border-[#C5D3DD] bg-transparent px-0 py-3 text-base leading-7 text-[#34414E] outline-none transition-colors focus:border-[#718CA2] disabled:cursor-not-allowed disabled:opacity-60"
                 />
               </div>
 
-             <button type="submit">
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-6 text-sm font-medium text-white transition-colors hover:bg-[#607D93]"
+              {status === "success" && (
+                <div
+                  role="status"
+                  className="border-l-2 border-[#829CB1] bg-[#F6F9FB] px-5 py-4 text-sm leading-6 text-[#526D83]"
+                >
+                  <p className="font-medium text-[#34414E]">
+                    Thank you for reaching out.
+                  </p>
+
+                  <p className="mt-1">
+                    Your message has been sent. I&apos;ll be in touch soon.
+                  </p>
+                </div>
+              )}
+
+              {status === "error" && (
+                <div
+                  role="alert"
+                  className="border-l-2 border-[#A16F6F] bg-[#FBF7F7] px-5 py-4 text-sm leading-6 text-[#7D5555]"
+                >
+                  {errorMessage}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-6 text-sm font-medium text-white transition-colors hover:bg-[#607D93] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send Message
-                <span aria-hidden="true" className="ml-2">
-                  →
-                </span>
+                {status === "sending" ? "Sending..." : "Send Message"}
+
+                {status !== "sending" && (
+                  <span aria-hidden="true" className="ml-2">
+                    →
+                  </span>
+                )}
               </button>
             </form>
           </div>
