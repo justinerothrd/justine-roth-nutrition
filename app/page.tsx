@@ -17,7 +17,17 @@ const services = [
       "Practical guidance for parents and caregivers supporting a loved one through meals, treatment, and recovery.",
   },
 ];
+import type { Metadata } from "next";
+import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "Eating Disorder Dietitian NYC",
+  description:
+    "Practical, evidence-based nutrition counseling for eating disorders, ARFID, adolescents, adults, and families in New York City and virtually.",
+  alternates: {
+    canonical: "/",
+  },
+};
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
