@@ -1,6 +1,15 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "About Justine Roth, MS, RD, CEDS-C",
+  description:
+    "Meet Justine Roth, MS, RD, CEDS-C, a registered dietitian specializing in eating disorders, ARFID, and nutrition counseling for adolescents, adults, and families in New York City and virtually.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
