@@ -51,13 +51,7 @@ export default function Home() {
               Schedule a Consultation
             </Link>
 
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#607F96] transition-colors hover:text-[#34414E]"
-            >
-              About Justine
-              <span aria-hidden="true">→</span>
-            </Link>
+            
           </div>
         </div>
       </section>
@@ -83,13 +77,7 @@ export default function Home() {
                   Schedule a Consultation
                 </Link>
 
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-[#607F96] transition-colors hover:text-[#34414E]"
-                >
-                  About Justine
-                  <span aria-hidden="true">→</span>
-                </Link>
+               
               </div>
             </div>
 
