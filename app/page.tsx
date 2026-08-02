@@ -22,9 +22,13 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#34414E]">
       {/* Mobile hero */}
-      <section className="border-b border-[#E4EBF0] px-6 py-10 sm:hidden">
+      <section className="border-b border-[#E4EBF0] px-6 py-9 sm:hidden">
         <div className="mx-auto max-w-md">
-          <h1 className="font-heading max-w-[12ch] text-[2.15rem] font-normal leading-[1.06] tracking-[-0.04em]">
+          <p className="text-[0.76rem] font-medium uppercase tracking-[0.16em] text-[#718CA2]">
+            Eating Disorder Nutrition Counseling
+          </p>
+
+          <h1 className="font-heading mt-5 max-w-[12ch] text-[2.15rem] font-normal leading-[1.06] tracking-[-0.04em]">
             What does healthy mean to you?
           </h1>
 
@@ -38,21 +42,55 @@ export default function Home() {
             My approach is practical, evidence-based, and collaborative—not
             overwhelming.
           </p>
+
+          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <Link
+              href="/contact"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-6 text-sm font-medium text-white transition-colors hover:bg-[#607D93]"
+            >
+              Schedule a Consultation
+            </Link>
+
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#607F96] transition-colors hover:text-[#34414E]"
+            >
+              About Justine
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Tablet and desktop hero */}
-      <section className="hidden border-b border-[#E4EBF0] px-8 py-14 sm:block lg:px-10 lg:py-16">
+      <section className="hidden border-b border-[#E4EBF0] px-8 py-12 sm:block lg:px-10 lg:py-14">
         <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-medium uppercase tracking-[0.26em] text-[#829CB1]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#718CA2]">
             Eating Disorder Nutrition Counseling
           </p>
 
-          <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-10 xl:gap-12">
-            <div>
+          <div className="mt-6 grid gap-10 lg:grid-cols-[0.9fr_auto_1.1fr] lg:gap-10 xl:gap-12">
+            <div className="flex flex-col items-start">
               <h1 className="font-heading max-w-[13ch] text-[2.75rem] font-normal leading-[1.04] tracking-[-0.04em] md:text-[3.15rem] lg:text-[3.6rem]">
                 What does healthy mean to you?
               </h1>
+
+              <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-6 text-sm font-medium text-white transition-colors hover:bg-[#607D93]"
+                >
+                  Schedule a Consultation
+                </Link>
+
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#607F96] transition-colors hover:text-[#34414E]"
+                >
+                  About Justine
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </div>
 
             <div
@@ -60,7 +98,7 @@ export default function Home() {
               className="hidden h-full w-px bg-gradient-to-b from-transparent via-[#D7E4EC] to-transparent lg:block"
             />
 
-            <div className="max-w-lg space-y-4 text-[1.05rem] leading-8 text-[#687785]">
+            <div className="max-w-md space-y-4 text-[1.05rem] leading-8 text-[#687785]">
               <p>Healthy means something different for everyone.</p>
 
               <p>
@@ -92,7 +130,7 @@ export default function Home() {
       {/* Services */}
       <section className="border-b border-[#E4EBF0] bg-white">
         {/* Blue heading band */}
-        <div className="bg-[#EAF1F5] px-6 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-12">
+        <div className="bg-[#EAF1F5] px-6 py-9 sm:px-8 sm:py-10 lg:px-10 lg:py-11">
           <div className="mx-auto max-w-6xl sm:flex sm:items-end sm:justify-between sm:gap-10">
             <div>
               <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#718CA2] sm:text-xs sm:tracking-[0.26em]">
