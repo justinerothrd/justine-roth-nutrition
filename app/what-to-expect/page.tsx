@@ -1,5 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "What to Expect",
+  description:
+    "Learn what to expect during nutrition counseling, including the first appointment, follow-up visits, and collaborative care.",
+  alternates: {
+    canonical: "/what-to-expect",
+  },
+};
 const firstAppointmentTopics = [
   "Medical and nutrition history",
   "Current eating patterns",
