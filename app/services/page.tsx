@@ -1,5 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Nutrition Counseling Services",
+  description:
+    "Eating disorder nutrition counseling, ARFID treatment, family support, and individualized nutrition care in New York City and virtually.",
+  alternates: {
+    canonical: "/services",
+  },
+};
 const services = [
   {
     title: "Eating Disorder Nutrition Therapy",
