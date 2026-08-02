@@ -22,9 +22,10 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#E4EBF0] bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-6 sm:px-8 lg:px-10">
+      <div className="mx-auto flex h-[88px] max-w-6xl items-center justify-between px-6 sm:px-8 lg:px-10">
         <Link
           href="/"
+          aria-label="Go to homepage"
           onClick={() => setMenuOpen(false)}
           className="flex items-center"
         >
@@ -93,13 +94,13 @@ export default function SiteHeader() {
                 type="button"
                 aria-label="Close menu"
                 onClick={() => setMenuOpen(false)}
-                className="fixed inset-0 top-[72px] z-40 bg-black/10"
+                className="fixed inset-0 top-[88px] z-40 bg-black/10"
               />
 
               <nav
                 id="mobile-navigation"
                 aria-label="Mobile navigation"
-                className="absolute right-0 top-10 z-50 w-60 border border-[#E4EBF0] bg-white p-3 shadow-lg"
+                className="absolute right-0 top-12 z-50 w-60 border border-[#E4EBF0] bg-white p-3 shadow-lg"
               >
                 <div className="flex flex-col">
                   {navLinks.map((link) => {
