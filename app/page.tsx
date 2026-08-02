@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 const services = [
@@ -17,8 +18,6 @@ const services = [
       "Practical guidance for parents and caregivers supporting a loved one through meals, treatment, and recovery.",
   },
 ];
-import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Eating Disorder Dietitian NYC",
