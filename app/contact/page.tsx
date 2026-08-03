@@ -339,14 +339,6 @@ export default function ContactPage() {
   )}
 </button>
           
-                {status === "sending" ? "Sending..." : "Send Message"}
-
-                {status !== "sending" && (
-                  <span aria-hidden="true" className="ml-2">
-                    →
-                  </span>
-                )}
-              </button>
             </form>
           </div>
         </div>
