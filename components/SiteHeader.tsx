@@ -24,11 +24,11 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[#E4EBF0] bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex h-[88px] max-w-6xl items-center justify-between px-6 sm:px-8 lg:px-10">
         <Link
-  href="/"
-  aria-label="Go to homepage"
-  onClick={() => setMenuOpen(false)}
-  className="flex items-center transition-transform duration-200 hover:scale-[1.02]"
->
+          href="/"
+          aria-label="Go to homepage"
+          onClick={() => setMenuOpen(false)}
+          className="flex items-center transition-transform duration-200 hover:scale-[1.02]"
+        >
           <Image
             src="/JR-logo.png"
             alt="Justine Roth Nutrition"
@@ -39,7 +39,7 @@ export default function SiteHeader() {
           />
         </Link>
 
-        {/* Desktop */}
+        {/* Desktop navigation */}
         <nav
           aria-label="Main navigation"
           className="hidden items-center gap-8 text-sm md:flex"
@@ -51,32 +51,32 @@ export default function SiteHeader() {
 
             return (
               <Link
-  key={link.href}
-  href={link.href}
-  className={`transition-all duration-200 ${
-    active
-      ? "font-medium text-[#34414E]"
-      : "text-[#687785] hover:-translate-y-px hover:text-[#526D83]"
-  }`}
->
-  {link.label}
-</Link>
+                key={link.href}
+                href={link.href}
+                className={
+                  active
+                    ? "font-medium text-[#34414E] transition-all duration-200"
+                    : "text-[#687785] transition-all duration-200 hover:-translate-y-px hover:text-[#526D83]"
+                }
+              >
+                {link.label}
+              </Link>
             );
           })}
 
           <Link
             href="/contact"
-            className={`transition-all duration-200 ${
+            className={
               pathname === "/contact"
-                ? "font-medium text-[#34414E]"
-                : "text-[#718CA2] hover:text-[#526D83]"
-            }`}
+                ? "font-medium text-[#34414E] transition-all duration-200"
+                : "text-[#718CA2] transition-all duration-200 hover:-translate-y-px hover:text-[#526D83]"
+            }
           >
             Contact
           </Link>
         </nav>
 
-        {/* Mobile */}
+        {/* Mobile navigation */}
         <div className="relative md:hidden">
           <button
             type="button"
@@ -106,18 +106,19 @@ export default function SiteHeader() {
                   {navLinks.map((link) => {
                     const active =
                       pathname === link.href ||
-                      (link.href !== "/" && pathname.startsWith(link.href));
+                      (link.href !== "/" &&
+                        pathname.startsWith(link.href));
 
                     return (
                       <Link
                         key={link.href}
                         href={link.href}
                         onClick={() => setMenuOpen(false)}
-                        className={`px-4 py-3 text-sm transition-colors ${
+                        className={
                           active
-                            ? "font-medium text-[#34414E]"
-                            : "text-[#687785] hover:bg-[#F7FAFC] hover:text-[#34414E]"
-                        }`}
+                            ? "px-4 py-3 text-sm font-medium text-[#34414E] transition-colors"
+                            : "px-4 py-3 text-sm text-[#687785] transition-colors hover:bg-[#F7FAFC] hover:text-[#34414E]"
+                        }
                       >
                         {link.label}
                       </Link>
@@ -127,11 +128,11 @@ export default function SiteHeader() {
                   <Link
                     href="/contact"
                     onClick={() => setMenuOpen(false)}
-                    className={`px-4 py-3 text-sm transition-colors ${
+                    className={
                       pathname === "/contact"
-                        ? "font-medium text-[#34414E]"
-                        : "text-[#718CA2] hover:bg-[#F7FAFC] hover:text-[#526D83]"
-                    }`}
+                        ? "px-4 py-3 text-sm font-medium text-[#34414E] transition-colors"
+                        : "px-4 py-3 text-sm text-[#718CA2] transition-colors hover:bg-[#F7FAFC] hover:text-[#526D83]"
+                    }
                   >
                     Contact
                   </Link>
