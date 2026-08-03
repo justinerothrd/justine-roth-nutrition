@@ -81,7 +81,7 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
                 <Link
                   href="/contact"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-6 text-sm font-medium text-white transition-colors hover:bg-[#607D93]"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-7 py-3 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#607D93] hover:shadow-md"
                 >
                   Schedule a Consultation
                 </Link>
