@@ -126,7 +126,7 @@ export default function ContactPage() {
 
         {/* Form area */}
         <div className="px-6 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
-          <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
             <aside className="max-w-sm">
               <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#829CB1] sm:text-xs sm:tracking-[0.26em]">
                 Contact Information
