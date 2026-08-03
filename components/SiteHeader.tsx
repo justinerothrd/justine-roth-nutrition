@@ -24,11 +24,11 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[#E4EBF0] bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex h-[88px] max-w-6xl items-center justify-between px-6 sm:px-8 lg:px-10">
         <Link
-          href="/"
-          aria-label="Go to homepage"
-          onClick={() => setMenuOpen(false)}
-          className="flex items-center"
-        >
+  href="/"
+  aria-label="Go to homepage"
+  onClick={() => setMenuOpen(false)}
+  className="flex items-center transition-transform duration-200 hover:scale-[1.02]"
+>
           <Image
             src="/JR-logo.png"
             alt="Justine Roth Nutrition"
@@ -56,7 +56,7 @@ export default function SiteHeader() {
                 className={`transition-colors ${
                   active
                     ? "font-medium text-[#34414E]"
-                    : "text-[#687785] hover:text-[#526D83]"
+                    :text-[#687785] hover:-translate-y-px hover:text-[#526D83]
                 }`}
               >
                 {link.label}
@@ -66,7 +66,7 @@ export default function SiteHeader() {
 
           <Link
             href="/contact"
-            className={`transition-colors ${
+            className={`transition-all duration-200 ${
               pathname === "/contact"
                 ? "font-medium text-[#34414E]"
                 : "text-[#718CA2] hover:text-[#526D83]"
