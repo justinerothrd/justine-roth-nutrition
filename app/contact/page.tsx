@@ -338,7 +338,7 @@ export default function ContactPage() {
     </span>
   )}
 </button>
-              >
+          
                 {status === "sending" ? "Sending..." : "Send Message"}
 
                 {status !== "sending" && (
