@@ -51,16 +51,16 @@ export default function SiteHeader() {
 
             return (
               <Link
-                key={link.href}
-                href={link.href}
-                className={`transition-colors ${
-                  active
-                    ? "font-medium text-[#34414E]"
-                    : "text-[#687785] hover:-translate-y-px hover:text-[#526D83]
-                }`}
-              >
-                {link.label}
-              </Link>
+  key={link.href}
+  href={link.href}
+  className={`transition-all duration-200 ${
+    active
+      ? "font-medium text-[#34414E]"
+      : "text-[#687785] hover:-translate-y-px hover:text-[#526D83]"
+  }`}
+>
+  {link.label}
+</Link>
             );
           })}
 
