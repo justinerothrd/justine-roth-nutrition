@@ -39,7 +39,7 @@ export default function SiteHeader() {
           />
         </Link>
 
-        {/* Desktop navigation */}
+        {/* Desktop */}
         <nav
           aria-label="Main navigation"
           className="hidden items-center gap-8 text-sm md:flex"
@@ -55,7 +55,7 @@ export default function SiteHeader() {
                 href={link.href}
                 className={
                   active
-                    ? "font-medium text-[#34414E] transition-all duration-200"
+                    ? "font-semibold text-[#718CA2] transition-all duration-200"
                     : "text-[#687785] transition-all duration-200 hover:-translate-y-px hover:text-[#526D83]"
                 }
               >
@@ -68,7 +68,7 @@ export default function SiteHeader() {
             href="/contact"
             className={
               pathname === "/contact"
-                ? "font-medium text-[#34414E] transition-all duration-200"
+                ? "font-semibold text-[#718CA2] transition-all duration-200"
                 : "text-[#718CA2] transition-all duration-200 hover:-translate-y-px hover:text-[#526D83]"
             }
           >
@@ -76,7 +76,7 @@ export default function SiteHeader() {
           </Link>
         </nav>
 
-        {/* Mobile navigation */}
+        {/* Mobile */}
         <div className="relative md:hidden">
           <button
             type="button"
@@ -116,7 +116,7 @@ export default function SiteHeader() {
                         onClick={() => setMenuOpen(false)}
                         className={
                           active
-                            ? "px-4 py-3 text-sm font-medium text-[#34414E] transition-colors"
+                            ? "px-4 py-3 text-sm font-semibold text-[#718CA2] transition-colors"
                             : "px-4 py-3 text-sm text-[#687785] transition-colors hover:bg-[#F7FAFC] hover:text-[#34414E]"
                         }
                       >
@@ -130,7 +130,7 @@ export default function SiteHeader() {
                     onClick={() => setMenuOpen(false)}
                     className={
                       pathname === "/contact"
-                        ? "px-4 py-3 text-sm font-medium text-[#34414E] transition-colors"
+                        ? "px-4 py-3 text-sm font-semibold text-[#718CA2] transition-colors"
                         : "px-4 py-3 text-sm text-[#718CA2] transition-colors hover:bg-[#F7FAFC] hover:text-[#526D83]"
                     }
                   >
