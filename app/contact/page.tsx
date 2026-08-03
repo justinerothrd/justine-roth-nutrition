@@ -326,9 +326,6 @@ export default function ContactPage() {
               )}
 
               <button
-                type="submit"
-                disabled={status === "sending"}
-                <button
   type="submit"
   disabled={status === "sending"}
   className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-7 py-3 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#607D93] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
