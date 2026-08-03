@@ -56,7 +56,7 @@ export default function SiteHeader() {
                 className={`transition-colors ${
                   active
                     ? "font-medium text-[#34414E]"
-                    :text-[#687785] hover:-translate-y-px hover:text-[#526D83]
+                    : "text-[#687785] hover:-translate-y-px hover:text-[#526D83]
                 }`}
               >
                 {link.label}
