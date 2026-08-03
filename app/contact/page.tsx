@@ -328,7 +328,19 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-6 text-sm font-medium text-white transition-colors hover:bg-[#607D93] disabled:cursor-not-allowed disabled:opacity-60"
+                <button
+  type="submit"
+  disabled={status === "sending"}
+  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-7 py-3 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#607D93] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
+>
+  {status === "sending" ? "Sending..." : "Send Message"}
+
+  {status !== "sending" && (
+    <span aria-hidden="true" className="ml-2">
+      →
+    </span>
+  )}
+</button>
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
 
