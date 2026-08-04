@@ -20,12 +20,75 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://justinerothnutrition.com"),
 
   title: {
-    default: "Eating Disorder Dietitian in NYC | Justine Roth, MS, RD, CEDS-C",
+    default:
+      "Eating Disorder Dietitian in NYC | Justine Roth, MS, RD, CEDS-C",
     template: "%s | Justine Roth Nutrition",
   },
 
   description:
-    "Specialized nutrition counseling for eating disorders, ARFID, adolescents, adults, and families in NYC. Evidence-based, compassionate care with Justine Roth, MS, RD, CEDS-C.",
+    "Specialized nutrition counseling for eating disorders, ARFID, adolescents, adults, and families in New York City and virtually throughout New York.",
+
+  keywords: [
+    "Eating Disorder Dietitian NYC",
+    "Eating Disorder Nutrition Counseling",
+    "ARFID Dietitian",
+    "Anorexia Nutrition Counseling",
+    "Bulimia Nutrition Counseling",
+    "Binge Eating Disorder Dietitian",
+    "Registered Dietitian NYC",
+    "CEDS-C",
+    "Nutrition Counseling NYC",
+    "Virtual Nutrition Counseling",
+  ],
+
+  authors: [
+    {
+      name: "Justine Roth, MS, RD, CEDS-C",
+    },
+  ],
+
+  creator: "Justine Roth",
+
+  openGraph: {
+    title:
+      "Eating Disorder Dietitian in NYC | Justine Roth, MS, RD, CEDS-C",
+
+    description:
+      "Specialized nutrition counseling for eating disorders, ARFID, adolescents, adults, and families in New York City and virtually throughout New York.",
+
+    url: "https://justinerothnutrition.com",
+
+    siteName: "Justine Roth Nutrition",
+
+    locale: "en_US",
+
+    type: "website",
+
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Justine Roth Nutrition",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Eating Disorder Dietitian in NYC | Justine Roth, MS, RD, CEDS-C",
+
+    description:
+      "Specialized nutrition counseling for eating disorders, adolescents, adults, and families.",
+
+    images: ["/opengraph-image.png"],
+  },
+
+  alternates: {
+    canonical: "https://justinerothnutrition.com",
+  },
 };
 
 const footerLinks = [
