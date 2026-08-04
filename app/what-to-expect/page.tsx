@@ -57,7 +57,7 @@ export default function WhatToExpectPage() {
           </p>
 
           <h1 className="font-heading mt-4 max-w-[14ch] text-[2.15rem] font-normal leading-[1.06] tracking-[-0.04em]">
-            Nutrition counseling should feel supportive, practical, and
+            Nutrition counseling should feel supportive and
             individualized.
           </h1>
 
