@@ -114,36 +114,66 @@ export default function RootLayout({
   type="application/ld+json"
   dangerouslySetInnerHTML={{
     __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      name: "Justine Roth Nutrition",
-      url: "https://www.justinerothnutrition.com",
-      logo: "https://www.justinerothnutrition.com/JR-logo.png",
-      image: "https://www.justinerothnutrition.com/og-image.png",
-      description:
-        "Eating disorder nutrition counseling for adolescents, adults, and families in New York City and virtually.",
-      telephone: "+1-908-485-4995",
-      email: "justinerothrd@gmail.com",
-      founder: {
-        "@type": "Person",
-        name: "Justine Roth, MS, RD, CEDS-C",
-      },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "New York",
-        addressRegion: "NY",
-        addressCountry: "US",
-      },
-      areaServed: [
-        "New York City",
-        "United States",
-      ],
-      sameAs: [
-        "https://www.instagram.com/justinerothnutrition/",
-        "https://www.facebook.com/justinerothnutrition",
-      ],
-    }),
-  }}
+     {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://justinerothnutrition.com/#organization",
+
+  name: "Justine Roth Nutrition",
+
+  url: "https://justinerothnutrition.com",
+
+  logo: "https://justinerothnutrition.com/JR-logo.png",
+
+  image: "https://justinerothnutrition.com/og-image.png",
+
+  description:
+    "Eating disorder nutrition counseling for adolescents, adults, and families in New York City and virtually throughout New York.",
+
+  telephone: "+1-908-485-4995",
+
+  email: "justinerothrd@gmail.com",
+
+  founder: {
+    "@type": "Person",
+    name: "Justine Roth, MS, RD, CEDS-C",
+  },
+
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "226 East 54th Street, Suite 604",
+    addressLocality: "New York",
+    addressRegion: "NY",
+    postalCode: "10022",
+    addressCountry: "US",
+  },
+
+  areaServed: [
+    "New York",
+    "New York City"
+  ],
+
+  medicalSpecialty: [
+    "Eating Disorders",
+    "Nutrition"
+  ],
+
+  availableLanguage: [
+    "English"
+  ],
+
+  sameAs: [
+    "https://www.instagram.com/justinerothnutrition/",
+    "https://www.facebook.com/justinerothnutrition",
+    "https://www.healthprofs.com/us/nutritionists-dietitians/justine-m-roth-new-york-ny/520110"
+  ],
+
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "NPI",
+    value: "1497900435"
+  }
+}
 />
         <SiteHeader />
 
