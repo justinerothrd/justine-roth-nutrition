@@ -110,70 +110,88 @@ export default function RootLayout({
       <body
         className={`${jakarta.variable} ${instrument.variable} min-h-screen bg-white text-[#34414E] antialiased`}
       >
-        <script
+    <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
     __html: JSON.stringify({
-     {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  "@id": "https://justinerothnutrition.com/#organization",
-
-  name: "Justine Roth Nutrition",
-
-  url: "https://justinerothnutrition.com",
-
-  logo: "https://justinerothnutrition.com/JR-logo.png",
-
-  image: "https://justinerothnutrition.com/og-image.png",
-
-  description:
-    "Eating disorder nutrition counseling for adolescents, adults, and families in New York City and virtually throughout New York.",
-
-  telephone: "+1-908-485-4995",
-
-  email: "justinerothrd@gmail.com",
-
-  founder: {
-    "@type": "Person",
-    name: "Justine Roth, MS, RD, CEDS-C",
-  },
-
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "226 East 54th Street, Suite 604",
-    addressLocality: "New York",
-    addressRegion: "NY",
-    postalCode: "10022",
-    addressCountry: "US",
-  },
-
-  areaServed: [
-    "New York",
-    "New York City"
-  ],
-
-  medicalSpecialty: [
-    "Eating Disorders",
-    "Nutrition"
-  ],
-
-  availableLanguage: [
-    "English"
-  ],
-
-  sameAs: [
-    "https://www.instagram.com/justinerothnutrition/",
-    "https://www.facebook.com/justinerothnutrition",
-    "https://www.healthprofs.com/us/nutritionists-dietitians/justine-m-roth-new-york-ny/520110"
-  ],
-
-  identifier: {
-    "@type": "PropertyValue",
-    propertyID: "NPI",
-    value: "1497900435"
-  }
-}
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MedicalBusiness",
+          "@id": "https://justinerothnutrition.com/#practice",
+          name: "Justine Roth Nutrition",
+          url: "https://justinerothnutrition.com",
+          logo: "https://justinerothnutrition.com/JR-logo.png",
+          image: "https://justinerothnutrition.com/og-image.png",
+          description:
+            "Specialized nutrition counseling for eating disorders, ARFID, adolescents, adults, and families in New York City and virtually throughout New York.",
+          telephone: "+1-908-485-4995",
+          email: "mailto:justinerothrd@gmail.com",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "226 East 54th Street, Suite 604",
+            addressLocality: "New York",
+            addressRegion: "NY",
+            postalCode: "10022",
+            addressCountry: "US",
+          },
+          areaServed: [
+            {
+              "@type": "City",
+              name: "New York City",
+            },
+            {
+              "@type": "State",
+              name: "New York",
+            },
+          ],
+          founder: {
+            "@id": "https://justinerothnutrition.com/#justine-roth",
+          },
+          sameAs: [
+            "https://www.instagram.com/justinerothnutrition/",
+            "https://www.facebook.com/justinerothnutrition",
+            "https://www.healthprofs.com/us/nutritionists-dietitians/justine-m-roth-new-york-ny/520110",
+          ],
+        },
+        {
+          "@type": "Person",
+          "@id": "https://justinerothnutrition.com/#justine-roth",
+          name: "Justine Roth",
+          honorificSuffix: "MS, RD, CEDS-C",
+          jobTitle: "Registered Dietitian",
+          url: "https://justinerothnutrition.com/about",
+          image: "https://justinerothnutrition.com/IMG_2310.jpeg",
+          email: "mailto:justinerothrd@gmail.com",
+          telephone: "+1-908-485-4995",
+          worksFor: {
+            "@id": "https://justinerothnutrition.com/#practice",
+          },
+          identifier: {
+            "@type": "PropertyValue",
+            propertyID: "NPI",
+            value: "1497900435",
+          },
+          knowsAbout: [
+            "Eating disorders",
+            "Anorexia nervosa",
+            "Bulimia nervosa",
+            "Binge eating disorder",
+            "ARFID",
+            "Disordered eating",
+            "Adolescent nutrition",
+            "Family and caregiver support",
+            "Nutrition counseling",
+          ],
+          sameAs: [
+            "https://www.instagram.com/justinerothnutrition/",
+            "https://www.facebook.com/justinerothnutrition",
+            "https://www.healthprofs.com/us/nutritionists-dietitians/justine-m-roth-new-york-ny/520110",
+          ],
+        },
+      ],
+    }).replace(/</g, "\\u003c"),
+  }}
 />
         <SiteHeader />
 
