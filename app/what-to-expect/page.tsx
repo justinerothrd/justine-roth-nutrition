@@ -2,11 +2,13 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "What to Expect",
+  title: "What to Expect During Nutrition Counseling",
+
   description:
-    "Learn what to expect during nutrition counseling, including the first appointment, follow-up visits, and collaborative care.",
+    "Learn what to expect during nutrition counseling, from your first appointment through ongoing support and collaboration with your treatment team.",
+
   alternates: {
-    canonical: "/what-to-expect",
+    canonical: "https://justinerothnutrition.com/what-to-expect",
   },
 };
 const firstAppointmentTopics = [
