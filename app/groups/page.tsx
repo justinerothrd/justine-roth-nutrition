@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Groups",
+  title: "Nutrition Groups & Meal Support",
+
   description:
-    "Nutrition groups, meal support, mindfulness, and educational offerings from Justine Roth Nutrition.",
+    "Explore nutrition groups and meal support designed to build confidence, flexibility, and recovery skills in a supportive environment.",
+
   alternates: {
-    canonical: "/groups",
+    canonical: "https://justinerothnutrition.com/groups",
   },
 };
 
