@@ -3,11 +3,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Justine Roth, MS, RD, CEDS-C",
+  title:
+    "About Justine Roth, MS, RD, CEDS-C | NYC Eating Disorder Dietitian",
+
   description:
-    "Meet Justine Roth, MS, RD, CEDS-C, a registered dietitian specializing in eating disorders, ARFID, and nutrition counseling for adolescents, adults, and families in New York City and virtually.",
+    "Meet Justine Roth, MS, RD, CEDS-C, a registered dietitian with more than 20 years of experience specializing in eating disorder nutrition counseling for adolescents, adults, and families.",
+
   alternates: {
-    canonical: "/about",
+    canonical: "https://justinerothnutrition.com/about",
   },
 };
 export default function AboutPage() {
