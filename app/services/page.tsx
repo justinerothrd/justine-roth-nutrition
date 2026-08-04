@@ -2,11 +2,13 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nutrition Counseling Services",
+  title: "Eating Disorder Nutrition Counseling | New York City",
+
   description:
-    "Eating disorder nutrition counseling, ARFID treatment, family support, and individualized nutrition care in New York City and virtually.",
+    "Individualized nutrition counseling for anorexia, bulimia, binge eating disorder, ARFID, and disordered eating for adolescents, adults, and families.",
+
   alternates: {
-    canonical: "/services",
+    canonical: "https://justinerothnutrition.com/services",
   },
 };
 const services = [
