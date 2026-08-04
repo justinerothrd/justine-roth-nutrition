@@ -17,12 +17,15 @@ const instrument = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://justinerothnutrition.com"),
+
   title: {
-    default: "Justine Roth, MS, RD, CEDS-C",
+    default: "Eating Disorder Dietitian in NYC | Justine Roth, MS, RD, CEDS-C",
     template: "%s | Justine Roth Nutrition",
   },
+
   description:
-    "Eating disorder and nutrition counseling for adolescents, adults, and families in New York City and virtually.",
+    "Specialized nutrition counseling for eating disorders, ARFID, adolescents, adults, and families in NYC. Evidence-based, compassionate care with Justine Roth, MS, RD, CEDS-C.",
 };
 
 const footerLinks = [
