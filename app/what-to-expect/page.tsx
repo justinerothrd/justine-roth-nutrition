@@ -79,8 +79,7 @@ export default function WhatToExpectPage() {
           <div className="mt-6 grid items-center gap-8 lg:grid-cols-[1.15fr_auto_0.85fr] lg:gap-10 xl:gap-12">
             <div>
               <h1 className="font-heading max-w-[16ch] text-[2.75rem] font-normal leading-[1.04] tracking-[-0.04em] md:text-[3.15rem] lg:text-[3.6rem]">
-                Nutrition counseling should feel supportive, practical, and
-                individualized.
+                Nutrition counseling should feel supportive and individualized.
               </h1>
             </div>
 
