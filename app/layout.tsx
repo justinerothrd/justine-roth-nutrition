@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Instrument_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import SiteHeader from "@/components/SiteHeader";
@@ -111,6 +112,22 @@ export default function RootLayout({
       <body
         className={`${jakarta.variable} ${instrument.variable} min-h-screen bg-white text-[#34414E] antialiased`}
       >
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZWPD5V299S"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZWPD5V299S');
+          `}
+        </Script>
+
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -162,7 +179,8 @@ export default function RootLayout({
                   honorificSuffix: "MS, RD, CEDS-C",
                   jobTitle: "Registered Dietitian",
                   url: "https://justinerothnutrition.com/about",
-                  image: "https://justinerothnutrition.com/IMG_2310.jpeg",
+                  image:
+                    "https://justinerothnutrition.com/IMG_2310.jpeg",
                   email: "mailto:justinerothrd@gmail.com",
                   telephone: "+1-908-485-4995",
                   worksFor: {
