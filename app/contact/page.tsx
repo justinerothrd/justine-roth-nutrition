@@ -4,6 +4,54 @@ import { FormEvent, useState } from "react";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
+function getAttributionData() {
+  let landingPage = window.location.pathname;
+  let referrer = "";
+  let utmSource = "";
+  let utmMedium = "";
+  let utmCampaign = "";
+
+  try {
+    const navigationEntries = performance.getEntriesByType(
+      "navigation"
+    ) as PerformanceNavigationTiming[];
+
+    const initialUrl =
+      navigationEntries.length > 0
+        ? new URL(navigationEntries[0].name)
+        : new URL(window.location.href);
+
+    landingPage = initialUrl.pathname || "/";
+
+    utmSource = initialUrl.searchParams.get("utm_source") || "";
+    utmMedium = initialUrl.searchParams.get("utm_medium") || "";
+    utmCampaign = initialUrl.searchParams.get("utm_campaign") || "";
+  } catch {
+    landingPage = window.location.pathname || "/";
+  }
+
+  try {
+    if (document.referrer) {
+      const referrerUrl = new URL(document.referrer);
+
+      if (referrerUrl.hostname !== window.location.hostname) {
+        referrer = referrerUrl.origin;
+      }
+    }
+  } catch {
+    referrer = "";
+  }
+
+  return {
+    referrer,
+    landingPage,
+    submissionPage: window.location.pathname || "/contact",
+    utmSource,
+    utmMedium,
+    utmCampaign,
+  };
+}
+
 export default function ContactPage() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -16,6 +64,7 @@ export default function ContactPage() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const attribution = getAttributionData();
 
     const submission = {
       name: formData.get("name"),
@@ -24,6 +73,13 @@ export default function ContactPage() {
       appointmentPreference: formData.get("appointmentPreference"),
       message: formData.get("message"),
       website: formData.get("website"),
+
+      referrer: attribution.referrer,
+      landingPage: attribution.landingPage,
+      submissionPage: attribution.submissionPage,
+      utmSource: attribution.utmSource,
+      utmMedium: attribution.utmMedium,
+      utmCampaign: attribution.utmCampaign,
     };
 
     try {
@@ -326,19 +382,18 @@ export default function ContactPage() {
               )}
 
               <button
-  type="submit"
-  disabled={status === "sending"}
-  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-7 py-3 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#607D93] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
->
-  {status === "sending" ? "Sending..." : "Send Message"}
+                type="submit"
+                disabled={status === "sending"}
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#718CA2] px-7 py-3 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#607D93] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {status === "sending" ? "Sending..." : "Send Message"}
 
-  {status !== "sending" && (
-    <span aria-hidden="true" className="ml-2">
-      →
-    </span>
-  )}
-</button>
-          
+                {status !== "sending" && (
+                  <span aria-hidden="true" className="ml-2">
+                    →
+                  </span>
+                )}
+              </button>
             </form>
           </div>
         </div>
