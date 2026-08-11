@@ -3,8 +3,9 @@
 import { FormEvent, useState } from "react";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
+
 function getAttributionData() {
-  let landingPage = window.location.pathname;
+  let landingPage = window.location.pathname || "/";
   let referrer = "";
   let utmSource = "";
   let utmMedium = "";
@@ -21,7 +22,6 @@ function getAttributionData() {
         : new URL(window.location.href);
 
     landingPage = initialUrl.pathname || "/";
-
     utmSource = initialUrl.searchParams.get("utm_source") || "";
     utmMedium = initialUrl.searchParams.get("utm_medium") || "";
     utmCampaign = initialUrl.searchParams.get("utm_campaign") || "";
@@ -44,54 +44,6 @@ function getAttributionData() {
   return {
     referrer,
     landingPage,
-    utmSource,
-    utmMedium,
-    utmCampaign,
-  };
-}
-
-function getAttributionData() {
-  let landingPage = window.location.pathname;
-  let referrer = "";
-  let utmSource = "";
-  let utmMedium = "";
-  let utmCampaign = "";
-
-  try {
-    const navigationEntries = performance.getEntriesByType(
-      "navigation"
-    ) as PerformanceNavigationTiming[];
-
-    const initialUrl =
-      navigationEntries.length > 0
-        ? new URL(navigationEntries[0].name)
-        : new URL(window.location.href);
-
-    landingPage = initialUrl.pathname || "/";
-
-    utmSource = initialUrl.searchParams.get("utm_source") || "";
-    utmMedium = initialUrl.searchParams.get("utm_medium") || "";
-    utmCampaign = initialUrl.searchParams.get("utm_campaign") || "";
-  } catch {
-    landingPage = window.location.pathname || "/";
-  }
-
-  try {
-    if (document.referrer) {
-      const referrerUrl = new URL(document.referrer);
-
-      if (referrerUrl.hostname !== window.location.hostname) {
-        referrer = referrerUrl.origin;
-      }
-    }
-  } catch {
-    referrer = "";
-  }
-
-  return {
-    referrer,
-    landingPage,
-    submissionPage: window.location.pathname || "/contact",
     utmSource,
     utmMedium,
     utmCampaign,
@@ -119,10 +71,8 @@ export default function ContactPage() {
       appointmentPreference: formData.get("appointmentPreference"),
       message: formData.get("message"),
       website: formData.get("website"),
-
       referrer: attribution.referrer,
       landingPage: attribution.landingPage,
-      submissionPage: attribution.submissionPage,
       utmSource: attribution.utmSource,
       utmMedium: attribution.utmMedium,
       utmCampaign: attribution.utmCampaign,
@@ -213,7 +163,6 @@ export default function ContactPage() {
 
       {/* Contact form */}
       <section className="border-b border-[#E4EBF0] bg-white">
-        {/* Blue heading band */}
         <div className="bg-[#EAF1F5] px-6 py-7 sm:px-8 sm:py-8 lg:px-10 lg:py-9">
           <div className="mx-auto max-w-6xl">
             <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#718CA2] sm:text-xs sm:tracking-[0.26em]">
@@ -226,7 +175,6 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Form area */}
         <div className="px-6 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
             <aside className="max-w-sm">
@@ -272,7 +220,6 @@ export default function ContactPage() {
             </aside>
 
             <form onSubmit={handleSubmit} className="relative space-y-8">
-              {/* Hidden spam-protection field */}
               <div
                 aria-hidden="true"
                 className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
