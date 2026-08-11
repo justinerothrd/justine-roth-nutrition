@@ -12,10 +12,8 @@ type ContactFormData = {
   appointmentPreference?: unknown;
   message?: unknown;
   website?: unknown;
-
   referrer?: unknown;
   landingPage?: unknown;
-  submissionPage?: unknown;
   utmSource?: unknown;
   utmMedium?: unknown;
   utmCampaign?: unknown;
@@ -77,7 +75,7 @@ function formatSource(utmSource: string, referrer: string) {
     try {
       return new URL(referrer).hostname.replace(/^www\./, "");
     } catch {
-      return "External referral";
+      return "External Referral";
     }
   }
 
@@ -103,17 +101,17 @@ export async function POST(request: Request) {
     const name = cleanText(body.name, 100);
     const email = cleanText(body.email, 200).toLowerCase();
     const phone = cleanText(body.phone, 50);
+
     const appointmentPreference = cleanText(
       body.appointmentPreference,
       50
     );
+
     const message = cleanText(body.message, 3000);
     const website = cleanText(body.website, 200);
 
     const referrer = cleanText(body.referrer, 500);
     const landingPage = cleanText(body.landingPage, 300) || "Unknown";
-    const submissionPage =
-      cleanText(body.submissionPage, 300) || "/contact";
     const utmSource = cleanText(body.utmSource, 200);
     const utmMedium = cleanText(body.utmMedium, 200);
     const utmCampaign = cleanText(body.utmCampaign, 200);
@@ -162,7 +160,6 @@ export async function POST(request: Request) {
     const safeSource = escapeHtml(sourceLabel);
     const safeReferrer = escapeHtml(referrer || "Not available");
     const safeLandingPage = escapeHtml(landingPage);
-    const safeSubmissionPage = escapeHtml(submissionPage);
     const safeUtmSource = escapeHtml(utmSource || "—");
     const safeUtmMedium = escapeHtml(utmMedium || "—");
     const safeUtmCampaign = escapeHtml(utmCampaign || "—");
@@ -182,6 +179,7 @@ export async function POST(request: Request) {
       to: [RECIPIENT_EMAIL],
       replyTo: email,
       subject: `New website inquiry from ${name}`,
+
       html: `
         <!DOCTYPE html>
         <html lang="en">
@@ -416,7 +414,7 @@ export async function POST(request: Request) {
                       <tr>
                         <td
                           style="
-                            width:125px;
+                            width:115px;
                             padding:0 12px 7px 0;
                             color:#8a98a3;
                             vertical-align:top;
@@ -448,13 +446,7 @@ export async function POST(request: Request) {
                           Referrer
                         </td>
 
-                        <td
-                          style="
-                            padding:0 0 7px;
-                            color:#526d83;
-                            vertical-align:top;
-                          "
-                        >
+                        <td style="padding:0 0 7px; vertical-align:top;">
                           ${safeReferrer}
                         </td>
                       </tr>
@@ -472,22 +464,6 @@ export async function POST(request: Request) {
 
                         <td style="padding:0 0 7px; vertical-align:top;">
                           ${safeLandingPage}
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td
-                          style="
-                            padding:0 12px 7px 0;
-                            color:#8a98a3;
-                            vertical-align:top;
-                          "
-                        >
-                          Submitted from
-                        </td>
-
-                        <td style="padding:0 0 7px; vertical-align:top;">
-                          ${safeSubmissionPage}
                         </td>
                       </tr>
 
@@ -579,6 +555,7 @@ export async function POST(request: Request) {
           </body>
         </html>
       `,
+
       text: [
         "NEW WEBSITE INQUIRY",
         "",
@@ -595,7 +572,6 @@ export async function POST(request: Request) {
         `Source: ${sourceLabel}`,
         `Referrer: ${referrer || "Not available"}`,
         `Landing page: ${landingPage}`,
-        `Submitted from: ${submissionPage}`,
         `UTM source: ${utmSource || "—"}`,
         `UTM medium: ${utmMedium || "—"}`,
         `UTM campaign: ${utmCampaign || "—"}`,
