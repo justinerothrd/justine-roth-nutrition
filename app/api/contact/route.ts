@@ -12,6 +12,13 @@ type ContactFormData = {
   appointmentPreference?: unknown;
   message?: unknown;
   website?: unknown;
+
+  referrer?: unknown;
+  landingPage?: unknown;
+  submissionPage?: unknown;
+  utmSource?: unknown;
+  utmMedium?: unknown;
+  utmCampaign?: unknown;
 };
 
 function cleanText(value: unknown, maxLength: number) {
@@ -45,6 +52,38 @@ function formatPreference(value: string) {
   return labels[value] || "Not selected";
 }
 
+function formatSource(utmSource: string, referrer: string) {
+  if (utmSource) {
+    const normalized = utmSource.toLowerCase();
+
+    if (normalized.includes("google")) return "Google";
+    if (normalized.includes("instagram")) return "Instagram";
+    if (normalized.includes("facebook")) return "Facebook";
+    if (normalized.includes("bing")) return "Bing";
+    if (normalized.includes("linkedin")) return "LinkedIn";
+
+    return utmSource;
+  }
+
+  if (referrer) {
+    const normalized = referrer.toLowerCase();
+
+    if (normalized.includes("google.")) return "Google";
+    if (normalized.includes("instagram.com")) return "Instagram";
+    if (normalized.includes("facebook.com")) return "Facebook";
+    if (normalized.includes("bing.com")) return "Bing";
+    if (normalized.includes("linkedin.com")) return "LinkedIn";
+
+    try {
+      return new URL(referrer).hostname.replace(/^www\./, "");
+    } catch {
+      return "External referral";
+    }
+  }
+
+  return "Direct / Unknown";
+}
+
 export async function POST(request: Request) {
   try {
     if (!process.env.RESEND_API_KEY) {
@@ -70,6 +109,14 @@ export async function POST(request: Request) {
     );
     const message = cleanText(body.message, 3000);
     const website = cleanText(body.website, 200);
+
+    const referrer = cleanText(body.referrer, 500);
+    const landingPage = cleanText(body.landingPage, 300) || "Unknown";
+    const submissionPage =
+      cleanText(body.submissionPage, 300) || "/contact";
+    const utmSource = cleanText(body.utmSource, 200);
+    const utmMedium = cleanText(body.utmMedium, 200);
+    const utmCampaign = cleanText(body.utmCampaign, 200);
 
     // Honeypot spam field.
     if (website) {
@@ -104,12 +151,21 @@ export async function POST(request: Request) {
     }
 
     const preferenceLabel = formatPreference(appointmentPreference);
+    const sourceLabel = formatSource(utmSource, referrer);
 
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safePhone = escapeHtml(phone || "Not provided");
     const safePreference = escapeHtml(preferenceLabel);
     const safeMessage = escapeHtml(message).replaceAll("\n", "<br />");
+
+    const safeSource = escapeHtml(sourceLabel);
+    const safeReferrer = escapeHtml(referrer || "Not available");
+    const safeLandingPage = escapeHtml(landingPage);
+    const safeSubmissionPage = escapeHtml(submissionPage);
+    const safeUtmSource = escapeHtml(utmSource || "—");
+    const safeUtmMedium = escapeHtml(utmMedium || "—");
+    const safeUtmCampaign = escapeHtml(utmCampaign || "—");
 
     const submittedAt = new Intl.DateTimeFormat("en-US", {
       dateStyle: "long",
@@ -326,6 +382,165 @@ export async function POST(request: Request) {
                     </div>
                   </div>
 
+                  <div
+                    style="
+                      margin-top:28px;
+                      padding:20px;
+                      background:#f6f9fb;
+                      border:1px solid #e4ebf0;
+                      border-radius:12px;
+                    "
+                  >
+                    <p
+                      style="
+                        margin:0 0 14px;
+                        color:#7f8a94;
+                        font-size:12px;
+                        font-weight:600;
+                        letter-spacing:1px;
+                        text-transform:uppercase;
+                      "
+                    >
+                      Inquiry Source
+                    </p>
+
+                    <table
+                      role="presentation"
+                      style="
+                        width:100%;
+                        border-collapse:collapse;
+                        font-size:13px;
+                        line-height:1.6;
+                      "
+                    >
+                      <tr>
+                        <td
+                          style="
+                            width:125px;
+                            padding:0 12px 7px 0;
+                            color:#8a98a3;
+                            vertical-align:top;
+                          "
+                        >
+                          Source
+                        </td>
+
+                        <td
+                          style="
+                            padding:0 0 7px;
+                            color:#34414e;
+                            font-weight:600;
+                            vertical-align:top;
+                          "
+                        >
+                          ${safeSource}
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td
+                          style="
+                            padding:0 12px 7px 0;
+                            color:#8a98a3;
+                            vertical-align:top;
+                          "
+                        >
+                          Referrer
+                        </td>
+
+                        <td
+                          style="
+                            padding:0 0 7px;
+                            color:#526d83;
+                            vertical-align:top;
+                          "
+                        >
+                          ${safeReferrer}
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td
+                          style="
+                            padding:0 12px 7px 0;
+                            color:#8a98a3;
+                            vertical-align:top;
+                          "
+                        >
+                          Landing page
+                        </td>
+
+                        <td style="padding:0 0 7px; vertical-align:top;">
+                          ${safeLandingPage}
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td
+                          style="
+                            padding:0 12px 7px 0;
+                            color:#8a98a3;
+                            vertical-align:top;
+                          "
+                        >
+                          Submitted from
+                        </td>
+
+                        <td style="padding:0 0 7px; vertical-align:top;">
+                          ${safeSubmissionPage}
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td
+                          style="
+                            padding:0 12px 7px 0;
+                            color:#8a98a3;
+                            vertical-align:top;
+                          "
+                        >
+                          UTM source
+                        </td>
+
+                        <td style="padding:0 0 7px; vertical-align:top;">
+                          ${safeUtmSource}
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td
+                          style="
+                            padding:0 12px 7px 0;
+                            color:#8a98a3;
+                            vertical-align:top;
+                          "
+                        >
+                          UTM medium
+                        </td>
+
+                        <td style="padding:0 0 7px; vertical-align:top;">
+                          ${safeUtmMedium}
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td
+                          style="
+                            padding:0 12px 0 0;
+                            color:#8a98a3;
+                            vertical-align:top;
+                          "
+                        >
+                          UTM campaign
+                        </td>
+
+                        <td style="padding:0; vertical-align:top;">
+                          ${safeUtmCampaign}
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
                   <div style="margin-top:30px;">
                     <a
                       href="mailto:${safeEmail}"
@@ -375,6 +590,15 @@ export async function POST(request: Request) {
         "",
         "MESSAGE",
         message,
+        "",
+        "INQUIRY SOURCE",
+        `Source: ${sourceLabel}`,
+        `Referrer: ${referrer || "Not available"}`,
+        `Landing page: ${landingPage}`,
+        `Submitted from: ${submissionPage}`,
+        `UTM source: ${utmSource || "—"}`,
+        `UTM medium: ${utmMedium || "—"}`,
+        `UTM campaign: ${utmCampaign || "—"}`,
         "",
         `Reply directly to: ${email}`,
       ].join("\n"),
