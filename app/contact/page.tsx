@@ -3,6 +3,52 @@
 import { FormEvent, useState } from "react";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
+function getAttributionData() {
+  let landingPage = window.location.pathname;
+  let referrer = "";
+  let utmSource = "";
+  let utmMedium = "";
+  let utmCampaign = "";
+
+  try {
+    const navigationEntries = performance.getEntriesByType(
+      "navigation"
+    ) as PerformanceNavigationTiming[];
+
+    const initialUrl =
+      navigationEntries.length > 0
+        ? new URL(navigationEntries[0].name)
+        : new URL(window.location.href);
+
+    landingPage = initialUrl.pathname || "/";
+
+    utmSource = initialUrl.searchParams.get("utm_source") || "";
+    utmMedium = initialUrl.searchParams.get("utm_medium") || "";
+    utmCampaign = initialUrl.searchParams.get("utm_campaign") || "";
+  } catch {
+    landingPage = window.location.pathname || "/";
+  }
+
+  try {
+    if (document.referrer) {
+      const referrerUrl = new URL(document.referrer);
+
+      if (referrerUrl.hostname !== window.location.hostname) {
+        referrer = referrerUrl.origin;
+      }
+    }
+  } catch {
+    referrer = "";
+  }
+
+  return {
+    referrer,
+    landingPage,
+    utmSource,
+    utmMedium,
+    utmCampaign,
+  };
+}
 
 function getAttributionData() {
   let landingPage = window.location.pathname;
