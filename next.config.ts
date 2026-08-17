@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         destination: "/about",
         permanent: true,
       },
+      {
+        source: "/about-justine-roth",
+        destination: "/about",
+        permanent: true,
+      },
     ];
   },
 };
